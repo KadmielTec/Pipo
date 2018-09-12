@@ -12,8 +12,8 @@ class LoginController {
     model = _model;
   }
 
-  login() {
-    if (view.state.userName == "") {
+  login(){
+    if (view.state.username == "") {
       console.log('Por favor ingrese el usuario');
       return;
     }
@@ -21,6 +21,7 @@ class LoginController {
       console.log('Por favor ingrese la contraseña');
       return;
     }
+    model.login();
   }
 
 }

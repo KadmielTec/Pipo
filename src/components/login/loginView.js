@@ -4,11 +4,12 @@ import React, { Component } from 'react';
 import {
   Text
   ,View
-  ,TouchableOpacity
   ,TextInput
 } from 'react-native';
 
-import { Button } from 'react-native-elements'
+import { msg_login } from '../commons/texts';
+
+import Button from '../commons/button';
 
 import TemplateView from '../templateView';
 
@@ -24,16 +25,20 @@ class LoginView extends TemplateView {
     this.controller = new LoginController(this,this.model);
   }
 
-  render() {
-    return (
+  render(){
+    return(
       <View>
         <Text>{'Login'}</Text>
+        <TextInput
+          value={this.state.username}
+          onChangeText={(text) => {this.setState({username: text})}}
+        />
+        <TextInput
+          onChangeText={(text) => {this.setState({password: text})}}
+        />
         <Button
-          title='Iniciar Sesión'
+          title={msg_login.login}
           onPress={() => this.controller.login()}
-          buttonStyle={{backgroundColor: 'black', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
-          containerStyle={{marginVertical: 10, height: 50, width: 250 }}
-          titleStyle={{fontWeight: 'bold'}}
         />
       </View>
     )

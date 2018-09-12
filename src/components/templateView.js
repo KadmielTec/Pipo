@@ -20,10 +20,10 @@ class TemplateView extends Component {
 
   render(){
     return(
-     <View style={[styles.container, styles.fondo]}>
-       <Navigator onNavigationStateChange={(prevState, newState) => this.set_current_screen(prevState, newState)}/>
-       <Spinner visible={this.state.screenlock_active}  textStyle={{color: '#FFF'}} />
-     </View>
+      <View style={[styles.container, styles.fondo]}>
+        <Navigator onNavigationStateChange={(prevState, newState) => this.set_current_screen(prevState, newState)}/>
+        <Spinner visible={this.state.screenlock_active}  textStyle={{color: '#FFF'}} />
+      </View>
     );
   }
 

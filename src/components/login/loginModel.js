@@ -15,7 +15,7 @@ class LoginModel {
     }
   }
 
-  login() {
+  login(){
     console.log('Iniciar sesión...');
   }
 }
