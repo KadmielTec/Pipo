@@ -5,7 +5,9 @@ let msg_login_es = {
 }
 
 let msg_home_es = {
-    str_title_default :"Confirmar acción"
+    contraReloj :'Contrareloj'
+    freeMode : 'Libre'
+    learn : 'Aprende'
 }
 
 let msg_themes_es = {
