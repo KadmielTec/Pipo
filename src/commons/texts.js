@@ -5,8 +5,8 @@ let msg_login_es = {
 }
 
 let msg_home_es = {
-    contraReloj :'Contrareloj'
-    freeMode : 'Libre'
+    contraReloj :'Contrareloj',
+    freeMode : 'Libre',
     learn : 'Aprende'
 }
 
@@ -23,8 +23,9 @@ var msg_home   = msg_home_es;
 var msg_themes     = msg_themes_es;
 var msg_questions  = msg_questions_es;
 
-module.exports = { msg_login
-                  ,msg_home
-                  ,msg_themes
-                  ,msg_questions
-                };
+module.exports = {
+  msg_login
+  ,msg_home
+  ,msg_themes
+  ,msg_questions
+};

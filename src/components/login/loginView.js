@@ -7,13 +7,17 @@ import {
   ,TextInput
 } from 'react-native';
 
-import { msg_login } from '../commons/texts';
+import { msg_login } from '../../commons/texts';
 
-import Button from '../commons/button';
+import LoginController from './loginController';
 
-import TemplateView from '../templateView';
+import LoginModel from './loginModel';
 
-class LoginView extends TemplateView {
+import Button from '../../commons/button';
+
+import Template from '../../commons/template';
+
+class LoginView extends Template {
 
   static navigationOptions = {
     header: null
@@ -27,7 +31,7 @@ class LoginView extends TemplateView {
 
   render(){
     return(
-      <View>
+      <View style={{alignItems:'center', justifyContent:'center'}}>
         <Text>{'Login'}</Text>
         <TextInput
           value={this.state.username}

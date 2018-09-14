@@ -1,7 +1,13 @@
-/** @format */
+import React, { Component } from 'react';
+import { AppRegistry } from 'react-native';
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+import TemplateView  from './src/components/templateView';
 
-AppRegistry.registerComponent(appName, () => App);
+export default class Pipo extends Component {
+  render() {
+    return (
+        <TemplateView/>
+    );
+  }
+}
+AppRegistry.registerComponent('Pipo', () => Pipo);

@@ -2,7 +2,9 @@
 
 import React, { Component } from 'react';
 
-import { connect_to, version } from '../../settings/config';
+var view;
+
+var self;
 
 class LoginModel {
 

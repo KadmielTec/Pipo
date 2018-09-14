@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import {createStackNavigator, createBottomTabNavigator, NavigationActions} from 'react-navigation';
 
 import LoginView from './login/loginView';
-import HomeView from  './model/ModelView';
 
 let Navigator = createStackNavigator({
   login: {
@@ -17,4 +16,4 @@ let Navigator = createStackNavigator({
   ,transitionConfig: () => ({ screenInterpolator: () => null })
 });
 
-module.exports = { MiNavigator };
+module.exports = { Navigator };

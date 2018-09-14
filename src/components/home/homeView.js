@@ -9,7 +9,9 @@ import {
 
 import Button from '../commons/button';
 
-class HomeView extends TemplateView {
+import Template from '../../commons/template';
+
+class HomeView extends Template {
 
   static navigationOptions = {
     header: null;
@@ -23,7 +25,7 @@ class HomeView extends TemplateView {
 
   render(){
     return(
-      <view>
+      <View>
         <Button
           title={msg_home.learn}
           onPress = {() => this.controller.learn()}
