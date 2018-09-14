@@ -24,6 +24,6 @@ class HomeController {
     model.freeMode();
   }
 
+}
 
-
-  module.exports = ModelController;
+module.exports = HomeController;

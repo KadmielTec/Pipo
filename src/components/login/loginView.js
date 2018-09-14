@@ -9,6 +9,8 @@ import {
 
 import { msg_login } from '../../commons/texts';
 
+import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+
 import LoginController from './loginController';
 
 import LoginModel from './loginModel';
@@ -31,19 +33,23 @@ class LoginView extends Template {
 
   render(){
     return(
-      <View style={{alignItems:'center', justifyContent:'center'}}>
-        <Text>{'Login'}</Text>
-        <TextInput
-          value={this.state.username}
-          onChangeText={(text) => {this.setState({username: text})}}
-        />
-        <TextInput
-          onChangeText={(text) => {this.setState({password: text})}}
-        />
-        <Button
-          title={msg_login.login}
-          onPress={() => this.controller.login()}
-        />
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5FCFF',}}>
+        <View>
+          <Text>{'Login'}</Text>
+          <FormLabel>Name</FormLabel>
+          <FormInput onChangeText={(text)=>{console.log(text)}}/>
+          <FormInput
+            placeholder='Password'
+            errorStyle={{ color: 'red' }}
+            errorMessage='Invalid Username or Password'
+            onChangeText={(text)=>{console.log(text)}}
+            value={this.state.password}
+          />
+          <Button
+            title={msg_login.login}
+            onPress={() => this.replace('home')}
+          />
+        </View>
       </View>
     )
   }

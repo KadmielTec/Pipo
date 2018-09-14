@@ -7,14 +7,20 @@ import {
   ,TextInput
 } from 'react-native';
 
-import Button from '../commons/button';
+import { msg_home } from '../../commons/texts';
+
+import HomeController from './homeController';
+
+import HomeModel from './homeModel';
+
+import Button from '../../commons/button';
 
 import Template from '../../commons/template';
 
 class HomeView extends Template {
 
   static navigationOptions = {
-    header: null;
+    header: null
   };
 
   constructor(props) {
@@ -25,12 +31,14 @@ class HomeView extends Template {
 
   render(){
     return(
-      <View>
+      <View style={{alignItems:'center', justifyContent:'center'}}>
         <Button
           title={msg_home.learn}
           onPress = {() => this.controller.learn()}
         />
-      <View>
+      </View>
     )
   }
 }
+
+module.exports = HomeView;
