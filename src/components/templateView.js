@@ -19,7 +19,7 @@ class TemplateView extends Component {
 
   render(){
     return(
-      <View>
+      <View style={{flex: 1}}>
         <Navigator onNavigationStateChange={(prevState, newState) => this.set_current_screen(prevState, newState)}/>
       </View>
     );

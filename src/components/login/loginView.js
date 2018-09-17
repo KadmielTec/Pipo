@@ -9,7 +9,7 @@ import {
 
 import { msg_login } from '../../commons/texts';
 
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+import { FormLabel, FormInput, FormValidationMessage, Card } from 'react-native-elements'
 
 import LoginController from './loginController';
 
@@ -33,23 +33,34 @@ class LoginView extends Template {
 
   render(){
     return(
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5FCFF',}}>
-        <View>
-          <Text>{'Login'}</Text>
-          <FormLabel>Name</FormLabel>
-          <FormInput onChangeText={(text)=>{console.log(text)}}/>
+      <View style={{flex: 1, alignItems: 'center', backgroundColor: '#F5FCFF', paddingTop: 30}}>
+        {/* <View style={{backgroundColor: 'white', width: 300, justifyContent: 'center', margin: 20, paddingBottom: 20}}> */}
+        <Card
+          title="Iniciar sesión"
+          containerStyle={{width: 300}}
+        >
+          <FormLabel>Username</FormLabel>
           <FormInput
-            placeholder='Password'
-            errorStyle={{ color: 'red' }}
-            errorMessage='Invalid Username or Password'
-            onChangeText={(text)=>{console.log(text)}}
+            value={this.state.username}
+            onChangeText={(text)=>{this.setState({username: text})}}
+            autoCorrect={false}
+            autoCapitalize='none'
+          />
+          <FormLabel>Password</FormLabel>
+          <FormInput
             value={this.state.password}
+            onChangeText={(text)=>{this.setState({password: text})}}
+            secureTextEntry={true}
+            autoCorrect={false}
+            autoCapitalize='none'
           />
-          <Button
-            title={msg_login.login}
-            onPress={() => this.replace('home')}
-          />
-        </View>
+        </Card>
+        {/* </View> */}
+        <Button
+          title={msg_login.login}
+          onPress={this.controller.login}
+          buttonStyle={{marginTop: 30}}
+        />
       </View>
     )
   }

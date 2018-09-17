@@ -19,6 +19,7 @@ class LoginModel {
 
   login(){
     console.log('Iniciar sesión...');
+    view.replace('home');
   }
 }
 
