@@ -34,20 +34,21 @@ class LoginView extends Template {
   render(){
     return(
       <View style={{flex: 1, alignItems: 'center', backgroundColor: '#F5FCFF', paddingTop: 30}}>
-        {/* <View style={{backgroundColor: 'white', width: 300, justifyContent: 'center', margin: 20, paddingBottom: 20}}> */}
         <Card
-          title="Iniciar sesión"
+          title={msg_login.login}
           containerStyle={{width: 300}}
         >
-          <FormLabel>Username</FormLabel>
+          <FormLabel>{msg_login.username}</FormLabel>
           <FormInput
+            ref={'username'}
             value={this.state.username}
             onChangeText={(text)=>{this.setState({username: text})}}
             autoCorrect={false}
             autoCapitalize='none'
           />
-          <FormLabel>Password</FormLabel>
+          <FormLabel>{msg_login.password}</FormLabel>
           <FormInput
+            ref={'password'}
             value={this.state.password}
             onChangeText={(text)=>{this.setState({password: text})}}
             secureTextEntry={true}
@@ -55,7 +56,6 @@ class LoginView extends Template {
             autoCapitalize='none'
           />
         </Card>
-        {/* </View> */}
         <Button
           title={msg_login.login}
           onPress={this.controller.login}

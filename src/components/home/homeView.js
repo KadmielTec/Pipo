@@ -31,7 +31,7 @@ class HomeView extends Template {
 
   render(){
     return(
-      <View style={{alignItems:'center', justifyContent:'center'}}>
+      <View style={{flex: 1, alignItems:'center', justifyContent:'center'}}>
         <Button
           title={msg_home.learn}
           onPress = {() => this.controller.learn()}

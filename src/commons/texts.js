@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 
 let msg_login_es = {
-  login : 'Iniciar sesión'
+  login: 'Iniciar sesión',
+  username: 'Usuario',
+  password: 'Contraseña'
 }
 
 let msg_home_es = {
-  contraReloj :'Contrareloj',
-  freeMode : 'Libre',
-  learn : 'Aprende'
+  contraReloj:'Contrareloj',
+  freeMode: 'Libre',
+  learn: 'Aprende'
 }
 
 let msg_themes_es = {
-  str_title_default :""
+  str_title_default: ""
 }
 
 let msg_questions_es = {
-  str_title_default :""
+  str_title_default: ""
 }
 
 var msg_login = msg_login_es;
