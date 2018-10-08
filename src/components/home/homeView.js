@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import {
   Text
-  ,View
-  ,TextInput
+  ,ScrollView
+  ,FlatList
 } from 'react-native';
 
 import { msg_home } from '../../commons/texts';
@@ -31,12 +31,20 @@ class HomeView extends Template {
 
   render(){
     return(
-      <View style={{flex: 1, alignItems:'center', justifyContent:'center'}}>
-        <Button
-          title={msg_home.learn}
-          onPress = {() => this.controller.learn()}
+      <ScrollView style={{flex: 1, paddingTop: 40}}>
+        <FlatList
+          data={this.state.dataSource}
+          keyExtractor={(item, index) => index}
+          renderItem={(item) => {
+            return(
+              <Button
+                title={item.item.title}
+                onPress = {item.item.onPress}
+              />
+            )
+          }}
         />
-      </View>
+      </ScrollView>
     )
   }
 }
