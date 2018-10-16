@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import {
   Text
+  ,View
   ,ScrollView
   ,FlatList
 } from 'react-native';
@@ -32,18 +33,20 @@ class HomeView extends Template {
   render(){
     return(
       <ScrollView style={{flex: 1, paddingTop: 40}}>
-        <FlatList
-          data={this.state.dataSource}
-          keyExtractor={(item, index) => index}
-          renderItem={(item) => {
-            return(
-              <Button
-                title={item.item.title}
-                onPress = {item.item.onPress}
-              />
-            )
-          }}
-        />
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <FlatList
+            data={this.state.dataSource}
+            keyExtractor={(item, index) => index}
+            renderItem={(item) => {
+              return(
+                <Button
+                  title = {item.item.title}
+                  onPress = {item.item.onPress}
+                />
+              )
+            }}
+          />
+        </View>
       </ScrollView>
     )
   }
