@@ -9,7 +9,7 @@ import {
 
 import { msg_login } from '../../commons/texts';
 
-import { FormLabel, FormInput, FormValidationMessage, Card } from 'react-native-elements'
+import { FormLabel, FormInput, Card } from 'react-native-elements'
 
 import LoginController from './loginController';
 
@@ -41,6 +41,7 @@ class LoginView extends Template {
           <FormLabel>{msg_login.username}</FormLabel>
           <FormInput
             ref={'username'}
+            inputStyle={{borderColor: 'black', borderWidth: 1}}
             value={this.state.username}
             onChangeText={(text)=>{this.setState({username: text})}}
             autoCorrect={false}
@@ -49,6 +50,7 @@ class LoginView extends Template {
           <FormLabel>{msg_login.password}</FormLabel>
           <FormInput
             ref={'password'}
+            inputStyle={{borderColor: 'black', borderWidth: 1}}
             value={this.state.password}
             onChangeText={(text)=>{this.setState({password: text})}}
             secureTextEntry={true}
