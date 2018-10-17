@@ -5,6 +5,7 @@ import {createStackNavigator, createBottomTabNavigator, NavigationActions} from 
 
 import LoginView from './login/loginView';
 import HomeView from './home/homeView';
+import aboutUs from './aboutUs';
 
 let Navigator = createStackNavigator({
   login: {
@@ -13,11 +14,12 @@ let Navigator = createStackNavigator({
   home: {
     screen: HomeView,
   },
+  aboutUs: {
+    screen: aboutUs,
+  }
 },
 {
   initialRouteName: 'login'
-  ,navigationOptions: { gesturesEnabled: false }
-  ,transitionConfig: () => ({ screenInterpolator: () => null })
 });
 
 module.exports = { Navigator };

@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import {
   Text
   ,View
-  ,TextInput
 } from 'react-native';
 
 import { msg_login } from '../../commons/texts';
@@ -33,7 +32,7 @@ class LoginView extends Template {
 
   render(){
     return(
-      <View style={{flex: 1, alignItems: 'center', backgroundColor: '#F5FCFF', paddingTop: 30}}>
+      <View style={{flex: 1, alignItems: 'center', backgroundColor: '#F5FCFF', paddingTop: 40}}>
         <Card
           title={msg_login.login}
           containerStyle={{width: 300}}
