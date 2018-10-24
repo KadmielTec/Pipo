@@ -13,15 +13,15 @@ class HomeModel {
   }
 
   learn(){
-    console.log('Entrando a mode aprende');
+    console.log('Entrando a modo aprende');
   }
 
   contraReloj(){
-    console.log('Entrando a mode contraReloj');
+    console.log('Entrando a modo contraReloj');
   }
 
   freeMode(){
-    console.log('Entrando a mode Libre');
+    console.log('Entrando a modo Libre');
   }
 
 }
