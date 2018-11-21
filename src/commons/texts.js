@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 let msg_login_es = {
   login: 'Iniciar sesión',
   username: 'Usuario',
-  password: 'Contraseña'
+  password: 'Contraseña',
+  repeatPassword: 'Repetir contraseña',
+  register: 'Registrar'
 }
 
 let msg_home_es = {

@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 
+let storage = require('../../commons/class/storage');
+
 var view;
 
 var self;
@@ -12,14 +14,25 @@ class LoginModel {
     view = _view;
     self = this;
     view.state = {
-      username: ''
-      ,password: ''
+      username: '',
+      password: '',
+      login: true,
     }
   }
 
   login(){
     console.log('Iniciar sesión...');
+    let username = storage.get_username();
+    let password = storage.get_password();
+    if(view.state.username != username || view.state.password != password){
+      console.log("Usuario o contraseña incorrectos");
+      return;
+    }
     view.replace('home');
+  }
+
+  register(){
+    storage.store_data({username: view.state.username, password: view.state.password});
   }
 }
 
