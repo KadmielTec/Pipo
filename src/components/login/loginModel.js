@@ -16,6 +16,7 @@ class LoginModel {
     view.state = {
       username: '',
       password: '',
+      password2: '',
       login: true,
     }
   }
@@ -33,6 +34,16 @@ class LoginModel {
 
   register(){
     storage.store_data({username: view.state.username, password: view.state.password});
+    self.changeForm();
+  }
+
+  changeForm(){
+    view.setState({
+      login: !view.state.login,
+      username: '',
+      password: '',
+      password2: '',
+    })
   }
 }
 

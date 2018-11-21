@@ -45,6 +45,10 @@ class LoginController {
     model.register();
   }
 
+  changeForm(){
+    model.changeForm();
+  }
+
 }
 
 module.exports = LoginController;
