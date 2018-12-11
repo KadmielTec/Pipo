@@ -12,16 +12,20 @@ class HomeController {
     model = _model;
   }
 
-  learn(){
-    model.learn();
+  play(){
+    model.play();
   }
 
-  contraReloj(){
-    model.contraReloj();
+  profile(){
+    model.profile();
   }
 
-  freeMode(){
-    model.freeMode();
+  aboutUs(){
+    model.aboutUs();
+  }
+
+  logout(){
+    model.logout();
   }
 
 }

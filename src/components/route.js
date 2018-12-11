@@ -5,7 +5,11 @@ import {createStackNavigator, createBottomTabNavigator, NavigationActions} from 
 
 import LoginView from './login/loginView';
 import HomeView from './home/homeView';
+import ThemeView from './theme/themeView';
+import GameModeView from './gameMode/gameModeView';
 import aboutUs from './aboutUs';
+
+// Recordatorio para Jose: Crear un SwitchNavigator entre Login y Home, Home volverlo un StackNavigator.
 
 let Navigator = createStackNavigator({
   login: {
@@ -16,6 +20,12 @@ let Navigator = createStackNavigator({
   },
   aboutUs: {
     screen: aboutUs,
+  },
+  theme: {
+    screen: ThemeView,
+  },
+  gameMode: {
+    screen: GameModeView,
   }
 },
 {

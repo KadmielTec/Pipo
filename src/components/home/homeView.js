@@ -34,17 +34,17 @@ class HomeView extends Template {
     return(
       <ScrollView style={{flex: 1, paddingTop: 40}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <FlatList
-            data={this.state.dataSource}
-            keyExtractor={(item, index) => index}
-            renderItem={(item) => {
-              return(
-                <Button
-                  title = {item.item.title}
-                  onPress = {item.item.onPress}
-                />
-              )
-            }}
+          <Button
+            title = {'Jugar'}
+            onPress = {this.controller.play}
+          />
+          <Button
+            title = {'Acerca de'}
+            onPress = {this.controller.aboutUs}
+          />
+          <Button
+            title = {'Salir'}
+            onPress = {this.controller.logout}
           />
         </View>
       </ScrollView>
