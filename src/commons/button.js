@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { Button } from 'react-native-elements'
+import { Button } from 'react-native-elements';
 
 class Buttons extends Component {
 
@@ -33,8 +33,8 @@ class Buttons extends Component {
       <Button
         title={this.props.title}
         onPress={() => this.props.onPress()}
-        buttonStyle={[{backgroundColor: 'black', borderWidth: 2, borderColor: 'white', borderRadius: 30}, this.props.buttonStyle]}
-        containerStyle={[{marginVertical: 10, height: 50, width: 250 }, this.props.containerStyle]}
+        buttonStyle={[{backgroundColor: 'black', borderWidth: 2, borderColor: 'white', borderRadius: 10}, this.props.buttonStyle]}
+        containerStyle={[{marginVertical: 10 }, this.props.containerStyle]}
         titleStyle={[{color: 'white'}, this.props.titleStyle]}
       />
     )
