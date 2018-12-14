@@ -27,6 +27,8 @@ class LoginModel {
     let password = storage.get_password();
     if(view.state.username != username || view.state.password != password){
       console.log("Usuario o contraseña incorrectos");
+      view.refs.username.shake();
+      view.refs.password.shake();
       return;
     }
     view.replace('home');

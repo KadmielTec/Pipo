@@ -7,7 +7,7 @@ import LoginView from './login/loginView';
 import HomeView from './home/homeView';
 import ThemeView from './theme/themeView';
 import GameModeView from './gameMode/gameModeView';
-import QuestionView from './questionView/questionView'
+import QuestionView from './question/questionView';
 import aboutUs from './aboutUs';
 
 // Recordatorio para Jose: Crear un SwitchNavigator entre Login y Home, Home volverlo un StackNavigator.

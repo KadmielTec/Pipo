@@ -10,16 +10,18 @@ class QuestionModel {
   constructor(_view) {
     view = _view;
     self = this;
-    let mode = view.get_params();
+    let params = view.get_params();
     
     let ds = [
-      {title: 'Opcion 1', onPress: () => {console.log('Correcto ', mode.questionModel)}}
-      ,{title: 'Opcion 2', onPress: () => {console.log('Incorrecto', mode.questionModel)}}
-      ,{title: 'Opcion 3', onPress: () => {console.log('Incorrecto ', mode.questionModel)}}
-      ,{title: 'Opcion 4', onPress: () => {console.log('Incorrecto ', mode.questionModel)}}
+      {title: 'Opcion 1', onPress: () => {console.log('Correcto ')}}
+      ,{title: 'Opcion 2', onPress: () => {console.log('Incorrecto')}}
+      ,{title: 'Opcion 3', onPress: () => {console.log('Incorrecto')}}
+      ,{title: 'Opcion 4', onPress: () => {console.log('Incorrecto')}}
     ]
     view.state = {
-      dataSource: ds
+      dataSource: ds,
+      gamemode: params.gamemode,
+      gametype: params.gametype,
     }
   }
 

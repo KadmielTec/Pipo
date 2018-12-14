@@ -10,15 +10,15 @@ import {
 
 import { msg_home } from '../../commons/texts';
 
-import QuestionController from './questionController';
+import GameModeController from './gameModeController';
 
-import QuestionModel from './questionModel';
+import GameModeModel from './gameModeModel';
 
 import Button from '../../commons/button';
 
 import Template from '../../commons/template';
 
-class QuestionView extends Template {
+class GameModeView extends Template {
 
   static navigationOptions = {
     header: null
@@ -26,17 +26,14 @@ class QuestionView extends Template {
 
   constructor(props) {
     super(props);
-    this.model = new QuestionModel(this);
-    this.controller = new QuestionController(this,this.model);
+    this.model = new GameModeModel(this);
+    this.controller = new GameModeController(this,this.model);
   }
 
   render(){
     return(
       <ScrollView style={{flex: 1, paddingTop: 40}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <Text>Esto es una pregunta?</Text>
-          <Text>Modo: {this.state.gamemode}</Text>
-          <Text>Tipo: {this.state.gametype}</Text>
           <FlatList
             data={this.state.dataSource}
             keyExtractor={(item, index) => index}
@@ -55,4 +52,4 @@ class QuestionView extends Template {
   }
 }
 
-module.exports = QuestionView;
+module.exports = GameModeView;

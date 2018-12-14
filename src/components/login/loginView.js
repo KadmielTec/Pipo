@@ -42,13 +42,13 @@ class LoginView extends Template {
         />
         <Card
           title={msg_login.login}
-          containerStyle={{width: 300}}
+          containerStyle={{width: 300, borderRadius: 5}}
         >
           <Visible visible={this.state.login}>
             <FormLabel>{msg_login.username}</FormLabel>
             <FormInput
               ref={'username'}
-              inputStyle={{borderColor: 'black', borderWidth: 1}}
+              inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.username}
               onChangeText={(text)=>{this.setState({username: text})}}
               autoCorrect={false}
@@ -57,7 +57,7 @@ class LoginView extends Template {
             <FormLabel>{msg_login.password}</FormLabel>
             <FormInput
               ref={'password'}
-              inputStyle={{borderColor: 'black', borderWidth: 1}}
+              inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.password}
               onChangeText={(text)=>{this.setState({password: text})}}
               secureTextEntry={true}
@@ -69,7 +69,7 @@ class LoginView extends Template {
             <FormLabel>{msg_login.username}</FormLabel>
             <FormInput
               ref={'username'}
-              inputStyle={{borderColor: 'black', borderWidth: 1}}
+              inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.username}
               onChangeText={(text)=>{this.setState({username: text})}}
               autoCorrect={false}
@@ -78,7 +78,7 @@ class LoginView extends Template {
             <FormLabel>{msg_login.password}</FormLabel>
             <FormInput
               ref={'password'}
-              inputStyle={{borderColor: 'black', borderWidth: 1}}
+              inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.password}
               onChangeText={(text)=>{this.setState({password: text})}}
               secureTextEntry={true}
@@ -88,7 +88,7 @@ class LoginView extends Template {
             <FormLabel>{msg_login.repeatPassword}</FormLabel>
             <FormInput
               ref={'password2'}
-              inputStyle={{borderColor: 'black', borderWidth: 1}}
+              inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.password2}
               onChangeText={(text)=>{this.setState({password2: text})}}
               secureTextEntry={true}
