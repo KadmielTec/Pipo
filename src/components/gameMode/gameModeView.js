@@ -10,6 +10,8 @@ import {
 
 import { msg_home } from '../../commons/texts';
 
+import { Header } from 'react-native-elements';
+
 import GameModeController from './gameModeController';
 
 import GameModeModel from './gameModeModel';
@@ -32,22 +34,28 @@ class GameModeView extends Template {
 
   render(){
     return(
-      <ScrollView style={{flex: 1, paddingTop: 40}}>
-        <View style={{flex: 1, justifyContent: 'center'}}>
-          <FlatList
-            data={this.state.dataSource}
-            keyExtractor={(item, index) => index}
-            renderItem={(item) => {
-              return(
-                <Button
-                  title = {item.item.title}
-                  onPress = {item.item.onPress}
-                />
-              )
-            }}
-          />
-        </View>
-      </ScrollView>
+      <View style={{flex: 1}}>
+        <Header
+          leftComponent={{ icon: 'arrow-back', color: '#fff', onPress: () => this.pop() }}
+          centerComponent={{ text: 'MODO DE JUEGO', style: { color: '#fff' } }}
+        />
+        <ScrollView>
+          <View style={{flex: 1, justifyContent: 'center'}}>
+            <FlatList
+              data={this.state.dataSource}
+              keyExtractor={(item, index) => index}
+              renderItem={(item) => {
+                return(
+                  <Button
+                    title = {item.item.title}
+                    onPress = {item.item.onPress}
+                  />
+                )
+              }}
+            />
+          </View>
+        </ScrollView>
+      </View>
     )
   }
 }
