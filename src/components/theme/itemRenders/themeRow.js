@@ -30,12 +30,15 @@ class ThemeRow extends Component {
   renderRow(){
     return (
       <Tile
+        containerStyle={{backgroundColor: 'black'}}
         imageSrc={get_theme_images(this.props.img)}
+        imageContainerStyle={{opacity: 0.8}}
         width={width}
         onPress={this.props.onPress}
-        icon={{ name: this.props.icon, type: 'font-awesome', color: 'white' }}
+        icon={{ name: this.props.icon, type: 'font-awesome', color: 'white', iconStyle: {shadowColor: 'orange', shadowOffset: {width: 0, height:0}, shadowOpacity:1, elevation:5 }}}
         title={this.props.title}
-        containerStyle={{alignItems: 'center', justifyContent: 'center'}}
+        titleStyle={{color: 'white'}}
+        overlayContainerStyle={{alignItems: 'center'}}
         featured
       />
     )
