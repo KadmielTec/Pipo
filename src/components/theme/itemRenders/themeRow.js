@@ -37,7 +37,7 @@ class ThemeRow extends Component {
         onPress={this.props.onPress}
         icon={{ name: this.props.icon, type: 'font-awesome', color: 'white', iconStyle: {shadowColor: 'orange', shadowOffset: {width: 0, height:0}, shadowOpacity:1, elevation:5 }}}
         title={this.props.title}
-        titleStyle={{color: 'white'}}
+        titleStyle={{color: 'white', shadowColor: 'orange', shadowOffset: {width: 0, height:0}, shadowOpacity:1, elevation:5}}
         overlayContainerStyle={{alignItems: 'center'}}
         featured
       />
