@@ -40,6 +40,7 @@ class ThemeView extends Template {
         <Header
           leftComponent={{ icon: 'arrow-back', color: '#fff', onPress: () => this.pop() }}
           centerComponent={{ text: 'TEMAS', style: { color: '#fff' } }}
+          backgroundColor={'orange'}
         />
         <ScrollView>
           <View style={{flex: 1, justifyContent: 'center'}}>
@@ -50,10 +51,10 @@ class ThemeView extends Template {
                 return(
                   <ThemeRow
                     title = {item.item.title}
-                    onPress = {() => this.controller.gameModeSelected(item.item.gameMode)}
+                    onPress = {() => this.controller.themeSelected(item.item)}
                     blank = {item.item.blank}
                     icon = {item.item.icon}
-                    img ={item.item.img}
+                    color ={item.item.color}
                   />
                 )
               }}

@@ -12,8 +12,8 @@ class ThemeController {
     model = _model;
   }
 
-  gameModeSelected(gameMode){
-    model.gameModeSelected(gameMode);
+  themeSelected(theme){
+    model.themeSelected(theme);
   }
 
 }
