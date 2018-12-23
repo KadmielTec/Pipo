@@ -34,7 +34,7 @@ class QuestionView extends Template {
     return(
       <ScrollView style={{flex: 1, paddingTop: 40}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <Text>Esto es una pregunta?</Text>
+          <Text>Pregunta: {this.state.qt}</Text>
           <Text>Modo: {this.state.gamemode}</Text>
           <Text>Tipo: {this.state.gametype}</Text>
           <FlatList
