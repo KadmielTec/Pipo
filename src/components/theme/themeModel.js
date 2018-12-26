@@ -11,10 +11,10 @@ class ThemeModel {
     view = _view;
     self = this;
     let ds = [
-      {title: 'Matematicas', theme: 0, icon: 'plus', color:'red'}
-      ,{title: 'Ciencia', theme: 1, icon: 'flask', color:'blue'}
-      ,{title: 'Historia', theme: 2, icon: 'globe', color:'brown'}
-      ,{title: 'Ortografía', theme: 3, icon: 'check-circle', color:'green'}
+      {title: 'Matematicas', theme: 0, icon: 'plus', color:'#ce4327'}
+      ,{title: 'Ciencia', theme: 1, icon: 'flask', color:'#363c78'}
+      ,{title: 'Historia', theme: 2, icon: 'globe', color:'#6b3e33'}
+      ,{title: 'Ortografía', theme: 3, icon: 'check-circle', color:'#78866b'}
       ,{title: 'Aleatorio', theme: 4, icon: 'random', color:'pink'}
     ]
 
