@@ -18,6 +18,7 @@ class Buttons extends Component {
     ,containerStyle: PropTypes.any
     ,titleStyle: PropTypes.any
     ,onPress: PropTypes.any
+    ,fontSize: PropTypes.number
   };
 
   static defaultProps = {
@@ -25,6 +26,7 @@ class Buttons extends Component {
     ,buttonStyle: {}
     ,containerStyle: {}
     ,titleStyle: {}
+    ,fontSize: 13
     ,onPress: () => {}
   };
 
@@ -36,6 +38,7 @@ class Buttons extends Component {
         buttonStyle={[{backgroundColor: 'black', borderWidth: 2, borderColor: 'white', borderRadius: 10}, this.props.buttonStyle]}
         containerStyle={[{marginVertical: 10 }, this.props.containerStyle]}
         titleStyle={[{color: 'white'}, this.props.titleStyle]}
+        fontSize={this.props.fontSize}
       />
     )
   }

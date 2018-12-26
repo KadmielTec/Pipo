@@ -15,16 +15,12 @@ class HomeModel {
     view.redirect('theme');
   }
 
-  profile(){
-    console.log('Entrando a modo contraReloj');
-  }
-
   aboutUs(){
     view.redirect('aboutUs');
   }
 
   logout(){
-    view.replace('login');
+    view.pop();
   }
 
 }

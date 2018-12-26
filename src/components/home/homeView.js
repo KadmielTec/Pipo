@@ -43,13 +43,14 @@ class HomeView extends Template {
             activeOpacity={0.7}
             containerStyle={{flex: 2, margin: 85}}
           />
-          <View style={{flex: 1, justifyContent: 'center', flexDirection: 'row'}}>
-            <View style={{flex: 1}}>
+          <View style={{flex: 1, justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{flex: 1.5}}>
               <Button
                 title = {'Acerca de'}
                 onPress = {this.controller.aboutUs}
                 titleStyle = {{fontSize: 9}}
                 containerStyle={{marginVertical: 0 }}
+                fontSize={11}
               />
             </View>
             <View style={{flex: 2}}>
@@ -59,14 +60,16 @@ class HomeView extends Template {
                 buttonStyle = {{backgroundColor: 'orange', borderColor: 'darkorange'}}
                 titleStyle = {{fontSize: 20}}
                 containerStyle={{marginVertical: 0 }}
+                fontSize={30}
               />
             </View>
-            <View style={{flex: 1}}>
+            <View style={{flex: 1.5}}>
               <Button
                 title = {'Salir'}
                 onPress = {this.controller.logout}
                 titleStyle = {{fontSize: 9}}
                 containerStyle={{marginVertical: 0 }}
+                fontSize={11}
               />
             </View>
           </View>

@@ -19,12 +19,13 @@ class GameModeModel {
       ,{title: 'Retar', onPress:() => self.onPressMode('Retar')}
     ];
     view.state = {
-      dataSource: ds
+      dataSource: ds,
+      themeName: params.themeName
     }
   }
 
   onPressMode(type){
-    view.redirect('question', {gamemode: params.gameMode, gametype: type})
+    view.redirect('question', {gamemode: params.theme, gametype: type})
   }
 }
 

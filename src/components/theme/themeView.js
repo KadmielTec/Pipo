@@ -10,6 +10,8 @@ import {
 
 import { msg_home } from '../../commons/texts';
 
+import { Header } from 'react-native-elements';
+
 import ThemeController from './themeController';
 
 import ThemeModel from './themeModel';
@@ -17,6 +19,8 @@ import ThemeModel from './themeModel';
 import Button from '../../commons/button';
 
 import Template from '../../commons/template';
+
+import ThemeRow from './itemRenders/themeRow';
 
 class ThemeView extends Template {
 
@@ -32,22 +36,33 @@ class ThemeView extends Template {
 
   render(){
     return(
-      <ScrollView style={{flex: 1, paddingTop: 40}}>
-        <View style={{flex: 1, justifyContent: 'center'}}>
-          <FlatList
-            data={this.state.dataSource}
-            keyExtractor={(item, index) => index}
-            renderItem={(item) => {
-              return(
-                <Button
-                  title = {item.item.title}
-                  onPress = {() => this.controller.gameModeSelected(item.item.gameMode)}
-                />
-              )
-            }}
-          />
-        </View>
-      </ScrollView>
+      <View style={{flex: 1}}>
+        <Header
+          leftComponent={{ icon: 'arrow-back', color: '#fff', onPress: () => this.pop() }}
+          centerComponent={{ text: 'TEMAS', style: { color: '#fff' } }}
+          backgroundColor={'orange'}
+        />
+        <ScrollView>
+          <View style={{flex: 1, justifyContent: 'center'}}>
+            <FlatList
+              data={this.state.dataSource}
+              keyExtractor={(item, index) => index}
+              renderItem={(item) => {
+                return(
+                  <ThemeRow
+                    title = {item.item.title}
+                    onPress = {() => this.controller.themeSelected(item.item)}
+                    blank = {item.item.blank}
+                    icon = {item.item.icon}
+                    color ={item.item.color}
+                  />
+                )
+              }}
+              numColumns={2}
+            />
+          </View>
+        </ScrollView>
+      </View>
     )
   }
 }

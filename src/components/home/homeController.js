@@ -16,10 +16,6 @@ class HomeController {
     model.play();
   }
 
-  profile(){
-    model.profile();
-  }
-
   aboutUs(){
     model.aboutUs();
   }
