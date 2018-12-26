@@ -12,9 +12,9 @@ class QuestionModel {
     self = this;
     let params = view.get_params();
     var question,qlength;
-    var i=0;
+    var i = 0;
 
-    question = ["Pregunta 1", "Pregunta 2", "Pregunta 3"];
+    question = ["Pregunta 1", "Pregunta 2", "Pregunta 3","Pregunta 4"];
     qlength = question.length;
             
     let ds = [
@@ -25,7 +25,7 @@ class QuestionModel {
     ]
 
     view.state = {
-      qt: question[2],
+      qt: question[0],
       dataSource: ds,
       gamemode: params.gamemode,
       gametype: params.gametype,
