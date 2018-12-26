@@ -6,27 +6,31 @@ var view;
 
 var self;
 
+var qlength;
+
 class QuestionModel {
   constructor(_view) {
     view = _view;
     self = this;
     let params = view.get_params();
-    var question,qlength;
+    var question;
     var i = 0;
 
     question = ["Pregunta 1", "Pregunta 2", "Pregunta 3","Pregunta 4"];
     qlength = question.length;
-            
+
     let ds = [
-      {title: 'Opcion 1', onPress: () => {console.log('correcto')}}
-      ,{title: 'Opcion 2', onPress: () => {console.log('Incorrecto')}}
-      ,{title: 'Opcion 3', onPress: () => {console.log('Incorrecto')}}
-      ,{title: 'Opcion 4', onPress: () => {console.log('Incorrecto')}}
+      {title: 'Opcion 1', onPress: () => {this.incrementCurrent(true)}}
+      ,{title: 'Opcion 2', onPress: () => {this.incrementCurrent(false)}}
+      ,{title: 'Opcion 3', onPress: () => {this.incrementCurrent(false)}}
+      ,{title: 'Opcion 4', onPress: () => {this.incrementCurrent(false)}}
     ]
 
     view.state = {
-      qt: question[0],
+      qt: question,
       dataSource: ds,
+      currentQuestion: question[0],
+      currentIndex: 0,
       gamemode: params.gamemode,
       gametype: params.gametype,
     }
@@ -46,6 +50,16 @@ class QuestionModel {
 
   Option4(){
     console.log('Seleccionada Opcion 4');
+  }
+
+  incrementCurrent(correct){
+    console.log(correct)
+    if(correct){
+      console.log('paso por true');
+      let index = (view.state.currentIndex < qlength - 1) ? view.state.currentIndex + 1 : 0;
+      console.log('index: ', index)
+      view.setState({currentQuestion: view.state.qt[index], currentIndex: index, wrongAnswer: false});
+    }else view.setState({wrongAnswer: true})
   }
 
 }

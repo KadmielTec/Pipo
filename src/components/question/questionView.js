@@ -18,6 +18,8 @@ import Button from '../../commons/button';
 
 import Template from '../../commons/template';
 
+import Visible from '../../commons/visible';
+
 class QuestionView extends Template {
 
   static navigationOptions = {
@@ -34,7 +36,7 @@ class QuestionView extends Template {
     return(
       <ScrollView style={{flex: 1, paddingTop: 40}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <Text>Pregunta: {this.state.qt}</Text>
+          <Text>Pregunta: {this.state.currentQuestion}</Text>
           <Text>Modo: {this.state.gamemode}</Text>
           <Text>Tipo: {this.state.gametype}</Text>
           <FlatList
@@ -49,6 +51,9 @@ class QuestionView extends Template {
               )
             }}
           />
+          <Visible visible={this.state.wrongAnswer}>
+            <Text>{'Respuesta erronea!'}</Text>
+          </Visible>
         </View>
       </ScrollView>
     )
