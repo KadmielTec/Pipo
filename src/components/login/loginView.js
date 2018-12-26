@@ -35,11 +35,6 @@ class LoginView extends Template {
   render(){
     return(
       <View style={{flex: 1, alignItems: 'center', backgroundColor: '#F5FCFF', paddingTop: 40}}>
-        <Button
-          title={(this.state.login) ? 'Registrarse' : 'Iniciar sesión'}
-          onPress={() => this.controller.changeForm()}
-          buttonStyle={{marginTop: 30}}
-        />
         <Card
           title={msg_login.login}
           containerStyle={{width: 300, borderRadius: 5}}
@@ -97,11 +92,18 @@ class LoginView extends Template {
             />
           </Visible>
         </Card>
-        <Button
-          title={(this.state.login) ? msg_login.login : msg_login.register}
-          onPress={(this.state.login) ? this.controller.login : this.controller.register}
-          buttonStyle={{marginTop: 30}}
-        />
+        <View style={{flexDirection: 'row'}}>
+          <Button
+            title={(this.state.login) ? 'Registrarse' : 'Iniciar sesión'}
+            onPress={() => this.controller.changeForm()}
+            buttonStyle={{marginTop: 30}}
+          />
+          <Button
+            title={(this.state.login) ? msg_login.login : msg_login.register}
+            onPress={(this.state.login) ? this.controller.login : this.controller.register}
+            buttonStyle={{marginTop: 30}}
+          />
+        </View>
       </View>
     )
   }
