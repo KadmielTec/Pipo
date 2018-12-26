@@ -34,7 +34,7 @@ class HomeView extends Template {
 
   render(){
     return(
-      <ScrollView style={{flex: 1, paddingTop: 40}}>
+      <ScrollView style={{flex: 1, paddingTop: 40, backgroundColor: '#F5FCFF'}}>
         <View style = {{justifyContent: 'center', alignItems: 'center'}}>
           <Avatar
             xlarge
@@ -48,7 +48,7 @@ class HomeView extends Template {
               <Button
                 title = {'Acerca de'}
                 onPress = {this.controller.aboutUs}
-                titleStyle = {{fontSize: 9}}
+                buttonStyle = {{backgroundColor: '#56A5EC', borderColor: '#368BC1'}}
                 containerStyle={{marginVertical: 0 }}
                 fontSize={11}
               />
@@ -67,7 +67,7 @@ class HomeView extends Template {
               <Button
                 title = {'Salir'}
                 onPress = {this.controller.logout}
-                titleStyle = {{fontSize: 9}}
+                buttonStyle = {{backgroundColor: '#56A5EC', borderColor: '#368BC1'}}
                 containerStyle={{marginVertical: 0 }}
                 fontSize={11}
               />

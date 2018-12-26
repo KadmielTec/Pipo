@@ -36,9 +36,11 @@ class QuestionView extends Template {
     return(
       <ScrollView style={{flex: 1, paddingTop: 40}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <Text>Pregunta: {this.state.currentQuestion}</Text>
-          <Text>Modo: {this.state.gamemode}</Text>
-          <Text>Tipo: {this.state.gametype}</Text>
+          <View style={{flexDirection: 'row'}}>
+            <Text style={{flex:1}}>Modo: {this.state.gamemode}</Text>
+            <Text style={{flex:1}}>Tipo: {this.state.gametype}</Text>
+          </View>
+          <Text style={{margin: 20}}>Pregunta: {this.state.currentQuestion}</Text>
           <FlatList
             data={this.state.dataSource}
             keyExtractor={(item, index) => index}
