@@ -16,14 +16,14 @@ class QuestionModel {
     var question;
     var i = 0;
 
-    question = ["Pregunta 1", "Pregunta 2", "Pregunta 3","Pregunta 4"];
+    question = ["Cual es la capital del departamento de Antioquia?", "Pregunta 2", "Pregunta 3","Pregunta 4"];
     qlength = question.length;
 
     let ds = [
-      {title: 'Opcion 1', onPress: () => {this.incrementCurrent(true)}}
-      ,{title: 'Opcion 2', onPress: () => {this.incrementCurrent(false)}}
-      ,{title: 'Opcion 3', onPress: () => {this.incrementCurrent(false)}}
-      ,{title: 'Opcion 4', onPress: () => {this.incrementCurrent(false)}}
+      {title: 'Envigado', onPress: () => {this.incrementCurrent(false)}}
+      ,{title: 'Medellín', onPress: () => {this.incrementCurrent(true)}}
+      ,{title: 'La Paz', onPress: () => {this.incrementCurrent(false)}}
+      ,{title: 'Bogotá', onPress: () => {this.incrementCurrent(false)}}
     ]
 
     view.state = {

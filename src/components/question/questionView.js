@@ -20,6 +20,8 @@ import Template from '../../commons/template';
 
 import Visible from '../../commons/visible';
 
+import { Card, ListItem } from 'react-native-elements';
+
 class QuestionView extends Template {
 
   static navigationOptions = {
@@ -36,17 +38,28 @@ class QuestionView extends Template {
     return(
       <ScrollView style={{flex: 1, paddingTop: 40}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
+        <Card 
+          title = "Pregunta #"
+          containerStyle={{width: 300, borderRadius: 5}}        
+        >
           <Text>Pregunta: {this.state.currentQuestion}</Text>
           <Text>Modo: {this.state.gamemode}</Text>
           <Text>Tipo: {this.state.gametype}</Text>
+        </Card>
+      
           <FlatList
             data={this.state.dataSource}
             keyExtractor={(item, index) => index}
             renderItem={(item) => {
               return(
-                <Button
-                  title = {item.item.title}
-                  onPress = {item.item.onPress}
+               // <Button
+               //   title = {item.item.title}
+              //  onPress = {item.item.onPress}
+              // />
+              <ListItem
+                    key={item.index}
+                    title={item.item.title}
+                    onPress={item.item.onPress}                  
                 />
               )
             }}
