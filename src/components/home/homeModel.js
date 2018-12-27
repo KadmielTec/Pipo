@@ -20,7 +20,7 @@ class HomeModel {
   }
 
   logout(){
-    view.pop();
+    view.replace('login');
   }
 
 }

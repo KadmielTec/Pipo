@@ -34,17 +34,27 @@ class HomeView extends Template {
 
   render(){
     return(
-      <ScrollView style={{flex: 1, paddingTop: 40, backgroundColor: '#F5FCFF'}}>
+      <ScrollView style={{flex: 1, backgroundColor: '#F5FCFF'}}>
         <View style = {{justifyContent: 'center', alignItems: 'center'}}>
           <Avatar
             xlarge
             rounded
             icon={{name: 'user', type: 'font-awesome'}}
             activeOpacity={0.7}
-            containerStyle={{flex: 2, margin: 85}}
+            containerStyle={{flex: 0.5, margin: 20}}
           />
-          <View style={{flex: 1, justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}}>
-            <View style={{flex: 1.5}}>
+          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <View style={{flex: 3}}>
+              <Button
+                title = {'Jugar'}
+                onPress = {this.controller.play}
+                buttonStyle = {{backgroundColor: 'orange', borderColor: 'darkorange'}}
+                titleStyle = {{fontSize: 20}}
+                containerStyle={{marginVertical: 0 }}
+                fontSize={26}
+              />
+            </View>
+            <View style={{flex: 1}}>
               <Button
                 title = {'Acerca de'}
                 onPress = {this.controller.aboutUs}
@@ -53,17 +63,7 @@ class HomeView extends Template {
                 fontSize={11}
               />
             </View>
-            <View style={{flex: 2}}>
-              <Button
-                title = {'Jugar'}
-                onPress = {this.controller.play}
-                buttonStyle = {{backgroundColor: 'orange', borderColor: 'darkorange'}}
-                titleStyle = {{fontSize: 20}}
-                containerStyle={{marginVertical: 0 }}
-                fontSize={30}
-              />
-            </View>
-            <View style={{flex: 1.5}}>
+            <View style={{flex: 1}}>
               <Button
                 title = {'Salir'}
                 onPress = {this.controller.logout}

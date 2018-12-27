@@ -46,6 +46,9 @@ class LoginView extends Template {
               inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.username}
               onChangeText={(text)=>{this.setState({username: text})}}
+              onSubmitEditing={() => this.refs.password.focus()}
+              blurOnSubmit={false}
+              selectTextOnFocus={true}
               autoCorrect={false}
               autoCapitalize='none'
             />
@@ -55,6 +58,9 @@ class LoginView extends Template {
               inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.password}
               onChangeText={(text)=>{this.setState({password: text})}}
+              onSubmitEditing={this.controller.login}
+              blurOnSubmit={false}
+              selectTextOnFocus={true}
               secureTextEntry={true}
               autoCorrect={false}
               autoCapitalize='none'
@@ -67,6 +73,9 @@ class LoginView extends Template {
               inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.username}
               onChangeText={(text)=>{this.setState({username: text})}}
+              onSubmitEditing={() => this.refs.password.focus()}
+              blurOnSubmit={false}
+              selectTextOnFocus={true}
               autoCorrect={false}
               autoCapitalize='none'
             />
@@ -76,6 +85,9 @@ class LoginView extends Template {
               inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.password}
               onChangeText={(text)=>{this.setState({password: text})}}
+              onSubmitEditing={() => this.refs.password2.focus()}
+              blurOnSubmit={false}
+              selectTextOnFocus={true}
               secureTextEntry={true}
               autoCorrect={false}
               autoCapitalize='none'
@@ -86,6 +98,9 @@ class LoginView extends Template {
               inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
               value={this.state.password2}
               onChangeText={(text)=>{this.setState({password2: text})}}
+              onSubmitEditing={this.controller.register}
+              blurOnSubmit={false}
+              selectTextOnFocus={true}
               secureTextEntry={true}
               autoCorrect={false}
               autoCapitalize='none'
@@ -94,7 +109,7 @@ class LoginView extends Template {
         </Card>
         <View style={{flexDirection: 'row'}}>
           <Button
-            title={(this.state.login) ? 'Registrarse' : 'Iniciar sesión'}
+            title={(this.state.login) ? msg_login.register : msg_login.login}
             onPress={() => this.controller.changeForm()}
             buttonStyle={{marginTop: 30}}
           />
