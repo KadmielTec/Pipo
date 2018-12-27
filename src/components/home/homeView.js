@@ -48,7 +48,7 @@ class HomeView extends Template {
               <Button
                 title = {'Jugar'}
                 onPress = {this.controller.play}
-                buttonStyle = {{backgroundColor: '#f84936', borderColor: 'darkorange'}}
+                buttonStyle = {{backgroundColor: '#f84936', borderColor: '#f7331d'}}
                 titleStyle = {{fontSize: 20}}
                 containerStyle={{marginVertical: 0 }}
                 fontSize={26}

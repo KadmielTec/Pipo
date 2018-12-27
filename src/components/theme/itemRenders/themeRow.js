@@ -32,7 +32,7 @@ class ThemeRow extends Component {
       <Tile
         // containerStyle={{backgroundColor: '#f84936'}}
         // imageSrc={get_theme_images(this.props.img)}
-        // imageContainerStyle={{backgroundColor: '#f84936', borderColor: 'darkorange', borderWidth:2}}
+        // imageContainerStyle={{backgroundColor: '#f84936', borderColor: '#f7331d', borderWidth:2}}
         width={width}
         onPress={this.props.onPress}
         icon={{ name: this.props.icon, type: 'font-awesome', color: 'white', iconStyle: {shadowColor: 'black', shadowOffset: {width: 0, height:0}, shadowOpacity:1, elevation:5 }}}
