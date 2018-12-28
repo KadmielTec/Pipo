@@ -38,7 +38,7 @@ class GameModeView extends Template {
         <Header
           leftComponent={{ icon: 'arrow-back', color: '#fff', onPress: () => this.pop() }}
           centerComponent={{ text: 'MODO DE JUEGO', style: { color: '#fff' } }}
-          backgroundColor={'orange'}
+          backgroundColor={'#f84936'}
         />
         <ScrollView>
           <View style={{flex: 1, justifyContent: 'center'}}>
