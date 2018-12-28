@@ -25,7 +25,7 @@ class GameModeModel {
   }
 
   onPressMode(type){
-    view.redirect('question', {gamemode: params.theme, gametype: type})
+    view.redirect('question', {theme: params.theme, gametype: type})
   }
 }
 

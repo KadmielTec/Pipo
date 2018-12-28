@@ -12,20 +12,8 @@ class QuestionController {
     model = _model;
   }
 
-  Option1(){
-    model.Option1();
-  }
-
-  Option2(){
-    model.Option2();
-  }
-
-  Option3(){
-    model.Option3();
-  }
-
-  Option4(){
-    model.Option4();
+  validateAnswer(selectedOption){
+    model.validateAnswer(selectedOption);
   }
 
 }

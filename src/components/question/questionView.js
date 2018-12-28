@@ -20,7 +20,7 @@ import Template from '../../commons/template';
 
 import Visible from '../../commons/visible';
 
-import { Card, ListItem } from 'react-native-elements';
+import { Card, ListItem, Rating } from 'react-native-elements';
 
 class QuestionView extends Template {
 
@@ -38,37 +38,34 @@ class QuestionView extends Template {
     return(
       <ScrollView style={{flex: 1, paddingTop: 40}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-<<<<<<< HEAD
-        <Card 
-          title = "Pregunta #"
-          containerStyle={{width: 300, borderRadius: 5}}        
-        >
-          <Text>Pregunta: {this.state.currentQuestion}</Text>
-          <Text>Modo: {this.state.gamemode}</Text>
-          <Text>Tipo: {this.state.gametype}</Text>
-        </Card>
-      
-=======
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{flex:1}}>Modo: {this.state.gamemode}</Text>
-            <Text style={{flex:1}}>Tipo: {this.state.gametype}</Text>
-          </View>
-          <Text style={{margin: 20}}>Pregunta: {this.state.currentQuestion}</Text>
->>>>>>> master
+          <Visible visible={this.state.lifesVisible}>
+            <Rating
+              type="heart"
+              fractions={3}
+              imageSize={20}
+              ratingCount={3}
+              readonly
+              startingValue={this.state.lifes}
+            />
+          </Visible>
+          <Card
+            title = {`Pregunta #${this.state.currentIndex + 1}`}
+            containerStyle={{width: 300, borderRadius: 5}}
+          >
+            <Text>{this.state.currentQuestion}</Text>
+          </Card>
+
           <FlatList
-            data={this.state.dataSource}
+            data={this.state.currentAnswers}
             keyExtractor={(item, index) => index}
             renderItem={(item) => {
+              console.log('itemRender item: ', item);
               return(
-               // <Button
-               //   title = {item.item.title}
-              //  onPress = {item.item.onPress}
-              // />
               <ListItem
-                    key={item.index}
-                    title={item.item.title}
-                    onPress={item.item.onPress}                  
-                />
+                key={item.item.value}
+                title={item.item.title}
+                onPress={() => this.controller.validateAnswer(item.item.value)}
+              />
               )
             }}
           />
