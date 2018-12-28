@@ -36,8 +36,8 @@ class QuestionView extends Template {
 
   render(){
     return(
-      <ScrollView style={{flex: 1, paddingTop: 40}}>
-        <View style={{flex: 1, justifyContent: 'center'}}>
+      <ScrollView style={{flex: 1, paddingTop: 40, backgroundColor: 'white'}}>
+        <View style={{flex: 1, justifyContent: 'center', backgroundColor: 'white'}}>
           <Visible visible={this.state.lifesVisible}>
             <Rating
               type="heart"

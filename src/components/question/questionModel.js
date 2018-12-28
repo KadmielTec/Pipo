@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 
+import { Alert } from 'react-native';
+
 var view;
 
 var self;
@@ -74,15 +76,30 @@ class QuestionModel {
   incrementCurrent(){
       let index = (view.state.currentIndex < qlength - 1) ? view.state.currentIndex + 1 : 0;
       console.log('index: ', index);
-      view.setState({currentQuestion: view.state.themeQuestions[index].pregunta, currentAnswers: view.state.themeAnswers[index], currentIndex: index, wrongAnswer: false});
+      view.setState({currentQuestion: view.state.themeQuestions[index].pregunta, currentAnswers: view.state.themeAnswers[index], currentIndex: index, wrongAnswer: false, lifesVisible: true});
+  }
+
+  async decrementLifes(){
+    let lifes = view.state.lifes - 1;
+    await view.setState({lifes: lifes})
+    view.setState({lifesVisible: true});
+    if(lifes <= 0){
+      Alert.alert(
+        ':(',
+        'No le quedan más vidas',
+        [
+          {text: 'OK', onPress: () => view.pop()},
+        ],
+        { cancelable: false }
+      )
+    }
   }
 
   validateAnswer(selectedOption){
     view.setState({lifesVisible: false});
     let correct = view.state.themeQuestions[view.state.currentIndex].correcta == selectedOption
     if(correct) self.incrementCurrent();
-    else view.setState({wrongAnswer: true, lifes: 1})
-    view.setState({lifesVisible: true});
+    else self.decrementLifes();
   }
 
 }
