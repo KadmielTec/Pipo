@@ -1,6 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react';
+import Sound from 'react-native-sound';
 
 import { Alert } from 'react-native';
 
@@ -9,6 +10,8 @@ var view;
 var self;
 
 var qlength;
+
+
 
 class QuestionModel {
   constructor(_view) {
@@ -22,6 +25,16 @@ class QuestionModel {
     // Historia: 2
     // Ortografía: 3
     // Aleatorio: 4
+    var Sound = require('react-native-sound');
+
+    Sound.setCategory('Playback');
+
+    var wosh = new Sound ('aplausos.mp3',Sound.MAIN_BUNDLE,(error) => {if (error){
+    console.log('no funcioneo :(',error);
+    return;    
+    }
+    console.log('si funciono');
+  });
 
     const QUESTIONS = [
       // Matemáticas
