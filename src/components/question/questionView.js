@@ -59,13 +59,12 @@ class QuestionView extends Template {
             data={this.state.currentAnswers}
             keyExtractor={(item, index) => index}
             renderItem={(item) => {
-              console.log('itemRender item: ', item);
               return(
-              <ListItem
-                key={item.item.value}
-                title={item.item.title}
-                onPress={() => this.controller.validateAnswer(item.item.value)}
-              />
+                <ListItem
+                  key={item.item.value}
+                  title={item.item.title}
+                  onPress={() => this.controller.validateAnswer(item.item.value)}
+                />
               )
             }}
           />
