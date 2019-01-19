@@ -14,11 +14,9 @@ import QuestionController from './questionController';
 
 import QuestionModel from './questionModel';
 
-import Button from '../../commons/button';
-
 import Template from '../../commons/template';
 
-import Visible from '../../commons/visible';
+import Visible from '../../commons/components/visible';
 
 import { Card, ListItem, Rating } from 'react-native-elements';
 

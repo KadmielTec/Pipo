@@ -12,6 +12,17 @@ let get_theme_images = function(_icon) {
   return theme_images[icon];
 }
 
+export const font_icons = {
+  default     : 'not_found',
+  math        : 'math',
+  science     : 'science',
+  history     : 'history',
+  orthography : 'orthography',
+  pipo        : 'pipo',
+  random      : 'random'
+}
+
 module.exports = {
-  get_theme_images
+  get_theme_images,
+  font_icons
 };

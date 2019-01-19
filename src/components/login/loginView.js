@@ -7,18 +7,12 @@ import {
 } from 'react-native';
 
 import { msg_login } from '../../commons/texts';
-
 import { FormLabel, FormInput, Card } from 'react-native-elements'
-
 import LoginController from './loginController';
-
 import LoginModel from './loginModel';
-
-import Button from '../../commons/button';
-
+import Button from '../../commons/components/button';
 import Template from '../../commons/template';
-
-import Visible from '../../commons/visible';
+import Visible from '../../commons/components/visible';
 
 class LoginView extends Template {
 

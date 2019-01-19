@@ -8,18 +8,10 @@ import {
   ,FlatList
 } from 'react-native';
 
-import { msg_home } from '../../commons/texts';
-
 import { Header } from 'react-native-elements';
-
 import ThemeController from './themeController';
-
 import ThemeModel from './themeModel';
-
-import Button from '../../commons/button';
-
 import Template from '../../commons/template';
-
 import ThemeRow from './itemRenders/themeRow';
 
 class ThemeView extends Template {
@@ -55,6 +47,7 @@ class ThemeView extends Template {
                     blank = {item.item.blank}
                     icon = {item.item.icon}
                     color ={item.item.color}
+                    type = {item.item.type}
                   />
                 )
               }}

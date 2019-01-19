@@ -16,8 +16,6 @@ import GameModeController from './gameModeController';
 
 import GameModeModel from './gameModeModel';
 
-import Button from '../../commons/button';
-
 import Template from '../../commons/template';
 
 class GameModeView extends Template {

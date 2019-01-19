@@ -5,20 +5,15 @@ import {
   Text
   ,View
   ,ScrollView
-  ,FlatList
 } from 'react-native';
 
 import { msg_home } from '../../commons/texts';
-
 import HomeController from './homeController';
-
 import HomeModel from './homeModel';
-
-import Button from '../../commons/button';
-
+import Button from '../../commons/components/button';
 import Template from '../../commons/template';
-
 import { Avatar } from 'react-native-elements';
+import Icon from '../../commons/components/icon';
 
 class HomeView extends Template {
 
@@ -35,14 +30,10 @@ class HomeView extends Template {
   render(){
     return(
       <ScrollView style={{flex: 1, backgroundColor: '#F5FCFF'}}>
-        <View style = {{justifyContent: 'center', alignItems: 'center'}}>
-          <Avatar
-            xlarge
-            rounded
-            icon={{name: 'user', type: 'font-awesome'}}
-            activeOpacity={0.7}
-            containerStyle={{flex: 0.5, margin: 20}}
-          />
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <View style={{flex: 0.5, width: 100, heigth: 100, borderRadius: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: 'orange', margin: 20}}>
+            <Icon name={'pipo'} style={{margin: 10}} size={80} />
+          </View>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <View style={{flex: 3}}>
               <Button
