@@ -1,11 +1,11 @@
 'use strict'
 
 import React, { Component } from 'react';
+import { Toast } from "native-base";
 
 let storage = require('../../commons/class/storage');
 
 var view;
-
 var self;
 
 class LoginModel {
@@ -26,9 +26,13 @@ class LoginModel {
     let username = storage.get_username();
     let password = storage.get_password();
     if(view.state.username != username || view.state.password != password){
-      console.log("Usuario o contraseña incorrectos");
-      view.refs.username.shake();
-      view.refs.password.shake();
+      Toast.show({
+        text: "Usuario o contraseña incorrecto",
+        duration: 5000,
+        position: "top",
+        type: 'danger',
+        textStyle: { textAlign: "center" }
+      });
       return;
     }
     view.replace('home');

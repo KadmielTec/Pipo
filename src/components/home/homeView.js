@@ -31,7 +31,7 @@ class HomeView extends Template {
     return(
       <ScrollView style={{flex: 1, backgroundColor: '#F5FCFF'}}>
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <View style={{flex: 0.5, width: 100, heigth: 100, borderRadius: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: 'orange', margin: 20}}>
+          <View style={{flex: 0.5, width: 100, heigth: 100, borderRadius: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FF7B08', margin: 20}}>
             <Icon name={'pipo'} style={{margin: 10}} size={80} />
           </View>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

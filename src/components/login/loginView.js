@@ -9,10 +9,10 @@ import {
 
 import { msg_login } from '../../commons/texts';
 import { FormLabel, FormInput, Card } from 'react-native-elements'
-import { Container, Header, Body, Footer, Title, Content } from "native-base";
+import { Container, Header, Body, Footer, Title, Content, Item, Input, Label, Form, Button } from "native-base";
 import LoginController from './loginController';
 import LoginModel from './loginModel';
-import Button from '../../commons/components/button';
+// import Button from '../../commons/components/button';
 import Template from '../../commons/template';
 import Visible from '../../commons/components/visible';
 import Icon from '../../commons/components/icon';
@@ -30,111 +30,122 @@ class LoginView extends Template {
   }
 
   render(){
+    let login = Boolean(this.state.login)
     return(
       <Container>
-        <Header style={{ height: 200, backgroundColor: 'white' }}>
+        <Header androidStatusBarColor={'#FF7B08'} style={{ height: 150, backgroundColor: 'white' }}>
 					<Body style={{ alignItems: "center" }}>
-						<Icon name={"pipo"} size={104} color={'#FF7B08'} />
-            <Title style={{color: 'black'}}>Aprende con Pipo</Title>
+            <View>
+              <Icon name={"pipo"} size={104} color={'#FF7B08'} />
+              <View padder>
+                <Text style={{color: '#5A5A5A', fontFamily: 'Ubuntu', fontStyle: 'italic'}}>Aprende con Pipo</Text>
+              </View>
+            </View>
 					</Body>
 				</Header>
 
         <Content style={{backgroundColor: '#EBEBEB'}}>
-          <Card
-            title={msg_login.login}
-            containerStyle={{width: 300, borderRadius: 5}}
-          >
-            <Visible visible={this.state.login}>
-              <FormLabel>{msg_login.username}</FormLabel>
-              <FormInput
-                ref={'username'}
-                inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
-                value={this.state.username}
-                onChangeText={(text)=>{this.setState({username: text})}}
-                onSubmitEditing={() => this.refs.password.focus()}
-                blurOnSubmit={false}
-                selectTextOnFocus={true}
-                autoCorrect={false}
-                autoCapitalize='none'
-              />
-              <FormLabel>{msg_login.password}</FormLabel>
-              <FormInput
-                ref={'password'}
-                inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
-                value={this.state.password}
-                onChangeText={(text)=>{this.setState({password: text})}}
-                onSubmitEditing={this.controller.login}
-                blurOnSubmit={false}
-                selectTextOnFocus={true}
-                secureTextEntry={true}
-                autoCorrect={false}
-                autoCapitalize='none'
-              />
-            </Visible>
-            <Visible visible={!this.state.login}>
-              <FormLabel>{msg_login.username}</FormLabel>
-              <FormInput
-                ref={'username'}
-                inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
-                value={this.state.username}
-                onChangeText={(text)=>{this.setState({username: text})}}
-                onSubmitEditing={() => this.refs.password.focus()}
-                blurOnSubmit={false}
-                selectTextOnFocus={true}
-                autoCorrect={false}
-                autoCapitalize='none'
-              />
-              <FormLabel>{msg_login.password}</FormLabel>
-              <FormInput
-                ref={'password'}
-                inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
-                value={this.state.password}
-                onChangeText={(text)=>{this.setState({password: text})}}
-                onSubmitEditing={() => this.refs.password2.focus()}
-                blurOnSubmit={false}
-                selectTextOnFocus={true}
-                secureTextEntry={true}
-                autoCorrect={false}
-                autoCapitalize='none'
-              />
-              <FormLabel>{msg_login.repeatPassword}</FormLabel>
-              <FormInput
-                ref={'password2'}
-                inputStyle={{borderColor: 'black', borderWidth: 1, width: 230}}
-                value={this.state.password2}
-                onChangeText={(text)=>{this.setState({password2: text})}}
-                onSubmitEditing={this.controller.register}
-                blurOnSubmit={false}
-                selectTextOnFocus={true}
-                secureTextEntry={true}
-                autoCorrect={false}
-                autoCapitalize='none'
-              />
-            </Visible>
-          </Card>
-          <View style={{flexDirection: 'row'}}>
-            <Button
-              title={(this.state.login) ? msg_login.register : msg_login.login}
-              onPress={() => this.controller.changeForm()}
-              buttonStyle={{marginTop: 30}}
-            />
-            <Button
-              title={(this.state.login) ? msg_login.login : msg_login.register}
-              onPress={(this.state.login) ? this.controller.login : this.controller.register}
-              buttonStyle={{marginTop: 30}}
-            />
-          </View>
+            {login &&
+              <View>
+                <Form>
+                  <Item floatingLabel>
+                    <Label>{"Usuario"}</Label>
+                    <Input
+                      onChangeText={(text)=>{this.setState({username: text})}}
+                      blurOnSubmit={false}
+                      selectTextOnFocus={true}
+                      autoCorrect={false}
+                      autoCapitalize='none'
+                    />
+                  </Item>
+
+                  <Item floatingLabel>
+                    <Label>{"Contraseña"}</Label>
+                    <Input
+                      onChangeText={(text)=>{this.setState({password: text})}}
+                      onSubmitEditing={this.controller.login}
+                      blurOnSubmit={false}
+                      selectTextOnFocus={true}
+                      autoCorrect={false}
+                      autoCapitalize={'none'}
+                      secureTextEntry={true}
+                    />
+                  </Item>
+                </Form>
+
+                <View padder>
+                  <Button
+                    block
+                    light
+                    title={msg_login.login}
+                    onPress={this.controller.login}
+                  >
+                    <Text>Login</Text>
+                  </Button>
+                </View>
+
+                <Text onPress={() => this.controller.changeForm()}>Register</Text>
+              </View>
+            }
+            {!login &&
+              <View>
+                <Form>
+                  <Item floatingLabel>
+                    <Label>{"Usuario"}</Label>
+                    <Input
+                      onChangeText={(text)=>{this.setState({username: text})}}
+                      blurOnSubmit={false}
+                      selectTextOnFocus={true}
+                      autoCorrect={false}
+                      autoCapitalize='none'
+                    />
+                  </Item>
+
+                  <Item floatingLabel>
+                    <Label>{"Contraseña"}</Label>
+                    <Input
+                      onChangeText={(text)=>{this.setState({password: text})}}
+                      blurOnSubmit={false}
+                      selectTextOnFocus={true}
+                      autoCorrect={false}
+                      autoCapitalize={'none'}
+                      secureTextEntry={true}
+                    />
+                  </Item>
+
+                  <Item floatingLabel >
+                    <Label>{"Confirmar contraseña"}</Label>
+                    <Input
+                      onChangeText={(text)=>{this.setState({password2: text})}}
+                      onSubmitEditing={this.controller.register}
+                      blurOnSubmit={false}
+                      selectTextOnFocus={true}
+                      autoCorrect={false}
+                      autoCapitalize={'none'}
+                      secureTextEntry={true}
+                    />
+                  </Item>
+                </Form>
+
+                <View padder>
+                  <Button
+                    block
+                    light
+                    title={msg_login.register}
+                    onPress={this.controller.register}
+                  >
+                    <Text>Register</Text>
+                  </Button>
+                </View>
+              </View>
+            }
         </Content>
 
         <Footer style={{ backgroundColor: "white" }}>
 					<View style={{ alignItems: "center", opacity: 0.5, flexDirection: "row" }}>
 						<View padder>
-							<Text style={{ color: "#000" }}>Made with love at </Text>
+							<Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>Made with love at Kadmiel</Text>
 						</View>
-						<Image
-							source={{ uri: "https://geekyants.com/images/logo-dark.png" }}
-							style={{ width: 422 / 4, height: 86 / 4 }}
-						/>
 					</View>
 				</Footer>
       </Container>

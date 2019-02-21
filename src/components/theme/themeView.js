@@ -32,7 +32,7 @@ class ThemeView extends Template {
         <Header
           leftComponent={{ icon: 'arrow-back', color: '#fff', onPress: () => this.pop() }}
           centerComponent={{ text: 'TEMAS', style: { color: '#fff' } }}
-          backgroundColor={'#f84936'}
+          backgroundColor={'#FF7B08'}
         />
         <ScrollView>
           <View style={{flex: 1, justifyContent: 'center'}}>

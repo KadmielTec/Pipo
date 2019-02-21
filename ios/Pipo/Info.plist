@@ -56,6 +56,19 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 		<string>icomoon.ttf</string>
+		<string>AntDesign.ttf</string>
+		<string>Roboto_medium.ttf</string>
+		<string>Roboto.ttf</string>
+		<string>rubicon-icon-font.ttf</string>
+		<string>Ubuntu-B.ttf</string>
+		<string>Ubuntu-BI.ttf</string>
+		<string>Ubuntu-C.ttf</string>
+		<string>Ubuntu-L.ttf</string>
+		<string>Ubuntu-LI.ttf</string>
+		<string>Ubuntu-M.ttf</string>
+		<string>Ubuntu-MI.ttf</string>
+		<string>Ubuntu-R.ttf</string>
+		<string>Ubuntu-RI.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

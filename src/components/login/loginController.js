@@ -1,7 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react';
-
+import { Toast } from "native-base";
 var view;
 var model;
 
@@ -14,13 +14,23 @@ class LoginController {
 
   login(){
     if (view.state.username == "") {
-      console.log('Por favor ingrese el usuario');
-      view.refs.username.shake();
+      Toast.show({
+        text: "Ingrese su usuario",
+        duration: 3000,
+        position: "top",
+        type: 'danger',
+        textStyle: { textAlign: "center" }
+      });
       return;
     }
     if (view.state.password == "") {
-      console.log('Por favor ingrese la contraseña');
-      view.refs.password.shake();
+      Toast.show({
+        text: "Ingrese la contraseña",
+        duration: 3000,
+        position: "top",
+        type: 'danger',
+        textStyle: { textAlign: "center" }
+      });
       return;
     }
     model.login();
@@ -28,18 +38,43 @@ class LoginController {
 
   register(){
     if(view.state.username == "") {
-      console.log('Por favor ingrese el usuario');
-      view.refs.username.shake();
+      Toast.show({
+        text: "Ingrese el usuario",
+        duration: 3000,
+        position: "top",
+        type: 'danger',
+        textStyle: { textAlign: "center" }
+      });
       return;
     }
     if (view.state.password == "") {
-      console.log('Por favor ingrese la contraseña');
-      view.refs.password.shake();
+      Toast.show({
+        text: "Ingrese la contraseña",
+        duration: 3000,
+        position: "top",
+        type: 'danger',
+        textStyle: { textAlign: "center" }
+      });
+      return;
+    }
+    if (view.state.password2 == "") {
+      Toast.show({
+        text: "Ingrese nuevamente la contraseña",
+        duration: 3000,
+        position: "top",
+        type: 'danger',
+        textStyle: { textAlign: "center" }
+      });
       return;
     }
     if(view.state.password !== view.state.password2){
-      console.log('Las contaseñas no coinciden');
-      view.refs.password2.shake();
+      Toast.show({
+        text: "Las contraseñas no coinciden",
+        duration: 3000,
+        position: "top",
+        type: 'danger',
+        textStyle: { textAlign: "center" }
+      });
       return;
     }
     model.register();
