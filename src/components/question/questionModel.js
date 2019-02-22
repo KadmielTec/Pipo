@@ -148,7 +148,8 @@ class QuestionModel {
   calcPoints(){
     let lostLifes = view.state.lifes - 3;
     let points = view.state.lifes * 100;
-    storage.store_data({points: points + storage.get_points()})
+    let currentPoints = storage.get_points() ? storage.get_points() : 0
+    storage.store_data({points: points + currentPoints})
     Alert.alert(
       '¡Felicidades!',
       `Vidas perdidas: ${lostLifes}; Peces obtenidos: ${points}`,

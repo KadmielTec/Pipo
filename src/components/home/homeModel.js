@@ -40,7 +40,7 @@ class HomeModel {
 
   reload(){
     let points = storage.get_points();
-    view.setState({points: points});
+    view.setState({points: points ? points : 0});
   }
 
 }
