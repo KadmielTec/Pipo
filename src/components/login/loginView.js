@@ -61,7 +61,9 @@ class LoginView extends Template {
                 <Item floatingLabel>
                   <Label>{"Usuario"}</Label>
                   <Input
+                    getRef={input => {this.user = input}}
                     onChangeText={(text)=>{this.setState({username: text})}}
+                    onSubmitEditing={() => this.pass._root.focus()}
                     blurOnSubmit={false}
                     selectTextOnFocus={true}
                     autoCorrect={false}
@@ -72,6 +74,7 @@ class LoginView extends Template {
                 <Item floatingLabel>
                   <Label>{"Contraseña"}</Label>
                   <Input
+                    getRef={input => {this.pass = input}}
                     onChangeText={(text)=>{this.setState({password: text})}}
                     onSubmitEditing={this.controller.login}
                     blurOnSubmit={false}
@@ -107,7 +110,9 @@ class LoginView extends Template {
                 <Item floatingLabel>
                   <Label>{"Usuario"}</Label>
                   <Input
+                    getRef={input => {this.user = input}}
                     onChangeText={(text)=>{this.setState({username: text})}}
+                    onSubmitEditing={() => this.regPass._root.focus()}
                     blurOnSubmit={false}
                     selectTextOnFocus={true}
                     autoCorrect={false}
@@ -118,7 +123,9 @@ class LoginView extends Template {
                 <Item floatingLabel>
                   <Label>{"Contraseña"}</Label>
                   <Input
+                    getRef={input => {this.regPass = input}}
                     onChangeText={(text)=>{this.setState({password: text})}}
+                    onSubmitEditing={() => this.regPass2._root.focus()}
                     blurOnSubmit={false}
                     selectTextOnFocus={true}
                     autoCorrect={false}
@@ -130,6 +137,7 @@ class LoginView extends Template {
                 <Item floatingLabel >
                   <Label>{"Confirmar contraseña"}</Label>
                   <Input
+                    getRef={input => {this.regPass2 = input}}
                     onChangeText={(text)=>{this.setState({password2: text})}}
                     onSubmitEditing={this.controller.register}
                     blurOnSubmit={false}

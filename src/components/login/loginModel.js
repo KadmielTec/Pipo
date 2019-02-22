@@ -22,7 +22,6 @@ class LoginModel {
   }
 
   login(){
-    console.log('Iniciar sesión...');
     let username = storage.get_username();
     let password = storage.get_password();
     if(view.state.username != username || view.state.password != password){
@@ -40,6 +39,13 @@ class LoginModel {
 
   register(){
     storage.store_data({username: view.state.username, password: view.state.password});
+    Toast.show({
+      text: `¡Usuario ${view.state.username} registrado con éxito!` ,
+      duration: 5000,
+      position: "top",
+      type: 'success',
+      textStyle: { textAlign: "center" }
+    });
     self.changeForm();
   }
 
