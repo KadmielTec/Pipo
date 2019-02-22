@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { NavigationActions, StackActions } from 'react-navigation';
+import { Alert } from 'react-native';
 
 let storage = require('../../commons/class/storage');
 
@@ -11,9 +12,11 @@ var self;
 class HomeModel {
   constructor(_view) {
     view = _view;
-    let user = storage.get_username()
+    let user = storage.get_username();
+    let points = storage.get_points();
     view.state = {
-      user: user
+      user: user,
+      points: points ? points : 0
     }
   }
 
@@ -33,6 +36,11 @@ class HomeModel {
     })
     storage.store_data({logged: false});
     view.dispatch(action);
+  }
+
+  reload(){
+    let points = storage.get_points();
+    view.setState({points: points});
   }
 
 }

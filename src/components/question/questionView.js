@@ -36,7 +36,7 @@ class QuestionView extends Template {
     return(
       <ScrollView style={{flex: 1, paddingTop: 40, backgroundColor: 'white'}}>
         <View style={{flex: 1, justifyContent: 'center', backgroundColor: 'white'}}>
-          <Visible visible={this.state.lifesVisible}>
+          {this.state.lifesVisible &&
             <Rating
               type="heart"
               fractions={3}
@@ -45,7 +45,7 @@ class QuestionView extends Template {
               readonly
               startingValue={this.state.lifes}
             />
-          </Visible>
+          }
           <Card
             title = {`Pregunta #${this.state.currentIndex + 1}`}
             containerStyle={{width: 300, borderRadius: 5}}

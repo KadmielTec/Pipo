@@ -5,10 +5,10 @@ import React, { Component } from 'react';
 
 import { Alert } from 'react-native';
 
+let storage = require('../../commons/class/storage');
+
 var view;
-
 var self;
-
 var qlength;
 var hands = null;
 var SoundPlayer = require('react-native-sound');
@@ -25,13 +25,13 @@ class QuestionModel {
     // Historia: 2
     // Ortografía: 3
     // Aleatorio: 4
-    
+
 
    SoundPlayer.setCategory('Playback');
 
-   hands = new SoundPlayer ('aplausos.mp3', SoundPlayer .MAIN_BUNDLE,(error) => {
+   hands = new SoundPlayer ('aplausos.mp3', SoundPlayer.MAIN_BUNDLE,(error) => {
       if (error){
-       //ToastAndroid.show('Error', ToastAndroid.SHORT);    
+       //ToastAndroid.show('Error', ToastAndroid.SHORT);
     }
   });
 
@@ -124,9 +124,9 @@ class QuestionModel {
   }
 
   incrementCurrent(){
-      let index = (view.state.currentIndex < qlength - 1) ? view.state.currentIndex + 1 : 0;
-      console.log('index: ', index);
-      view.setState({currentQuestion: view.state.themeQuestions[index].pregunta, currentAnswers: view.state.themeAnswers[index], currentIndex: index, wrongAnswer: false, lifesVisible: true});
+    let index = (view.state.currentIndex < qlength - 1) ? view.state.currentIndex + 1 : -1;
+    if(index > -1) view.setState({currentQuestion: view.state.themeQuestions[index].pregunta, currentAnswers: view.state.themeAnswers[index], currentIndex: index, wrongAnswer: false, lifesVisible: true});
+    else self.calcPoints();
   }
 
   async decrementLifes(){
@@ -145,13 +145,28 @@ class QuestionModel {
     }
   }
 
+  calcPoints(){
+    let lostLifes = view.state.lifes - 3;
+    let points = view.state.lifes * 100;
+    storage.store_data({points: points + storage.get_points()})
+    Alert.alert(
+      '¡Felicidades!',
+      `Vidas perdidas: ${lostLifes}; Peces obtenidos: ${points}`,
+      [
+        {text: 'OK', onPress: () => view.pop()},
+      ],
+      { cancelable: false }
+    )
+  }
+
   validateAnswer(selectedOption){
     view.setState({lifesVisible: false});
     let correct = view.state.themeQuestions[view.state.currentIndex].correcta == selectedOption
-    if(correct) 
-    self.incrementCurrent(),
-    hands.play();
+    if(correct) hands.pause(() => {
+      hands.play();
+    });
     else self.decrementLifes();
+    self.incrementCurrent()
   }
 
 }

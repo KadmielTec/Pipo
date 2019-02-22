@@ -20,7 +20,9 @@ export const font_icons = {
   orthography : 'orthography',
   pipo        : 'pipo',
   random      : 'random',
-  heart       : 'heart'
+  heart       : 'heart',
+  fish        : 'fish',
+  reload      : 'reload',
 }
 
 module.exports = {

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import {
   Text
   ,View
-  ,ScrollView
+  ,TouchableOpacity
 } from 'react-native';
 import {
   Container,
@@ -59,6 +59,15 @@ class HomeView extends Template {
           </Right>
         </Header>
         <Body style={{padding: 10}}>
+          <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row', marginVertical: 5, marginLeft: '60%'}}>
+            <View style={{alignItems: 'flex-end', justifyContent: 'center', backgroundColor: 'whitesmoke', borderRadius: 8, padding: 3, flexDirection: 'row', marginRight: 10}}>
+              <Icon name={'fish'} size={20} />
+              <Text style={{fontSize: 20}}>{this.state.points}</Text>
+            </View>
+            <TouchableOpacity onPress={() => this.controller.reload()}>
+              <Icon name={'reload'} size={20} />
+            </TouchableOpacity>
+          </View>
           <Thumbnail style={{borderRadius: 100, width: 200, height: 200}} source={{uri: 'https://c1.staticflickr.com/6/5100/5455782332_41a421d75e_b.jpg'}} />
           <Text style={{fontFamily: 'Ubuntu'}}>{this.state.user}</Text>
           <Button full large light onPress={this.controller.play} style={{marginVertical: 20}}>

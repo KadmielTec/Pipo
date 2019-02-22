@@ -14,6 +14,7 @@ class Storage {
       username : ''
       ,password : ''
       ,logged: false
+      ,points: 0
     };
     self.load_data();
   }
@@ -43,15 +44,23 @@ class Storage {
     return storage_data.logged;
   }
 
+  get_points(){
+    console.log('storage_data.points: ', storage_data.points);
+    return storage_data.points;
+  }
+
   store_data(_args){
-    let defArgs = {username: storage_data.username, password: storage_data.password, logged: false};
+    let defArgs = {username: storage_data.username, password: storage_data.password, logged: storage_data.logged, points: storage_data.points};
     let args = Object.assign({}, defArgs, _args);
+    console.log(_args);
+    console.log(args);
 
     AsyncStorage.getItem('loggedIn').then(data => AsyncStorage.setItem('loggedIn', JSON.stringify(args)));
 
     storage_data.username = args.username;
     storage_data.password = args.password;
     storage_data.logged = args.logged;
+    storage_data.points = args.points;
   }
 
   validate_value(){

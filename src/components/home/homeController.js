@@ -24,6 +24,10 @@ class HomeController {
     model.logout();
   }
 
+  reload(){
+    model.reload();
+  }
+
 }
 
 module.exports = HomeController;
