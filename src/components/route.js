@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import {createStackNavigator, createBottomTabNavigator, NavigationActions} from 'react-navigation';
 
+import LoadingView from './loading/loadingView';
 import LoginView from './login/loginView';
 import HomeView from './home/homeView';
 import ThemeView from './theme/themeView';
@@ -13,6 +14,9 @@ import aboutUs from './aboutUs';
 // Recordatorio para Jose: Crear un SwitchNavigator entre Login y Home, Home volverlo un StackNavigator.
 
 let Navigator = createStackNavigator({
+  loading: {
+    screen: LoadingView,
+  },
   login: {
     screen: LoginView,
   },
@@ -33,7 +37,7 @@ let Navigator = createStackNavigator({
   }
 },
 {
-  initialRouteName: 'login'
+  initialRouteName: 'loading'
 });
 
 module.exports = { Navigator };

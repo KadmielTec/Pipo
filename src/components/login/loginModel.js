@@ -27,13 +27,14 @@ class LoginModel {
     if(view.state.username != username || view.state.password != password){
       Toast.show({
         text: "Usuario o contraseña incorrecto",
-        duration: 5000,
+        duration: 4000,
         position: "top",
         type: 'danger',
         textStyle: { textAlign: "center" }
       });
       return;
     }
+    storage.store_data({logged: true});
     view.replace('home');
   }
 
@@ -41,7 +42,7 @@ class LoginModel {
     storage.store_data({username: view.state.username, password: view.state.password});
     Toast.show({
       text: `¡Usuario ${view.state.username} registrado con éxito!` ,
-      duration: 5000,
+      duration: 4000,
       position: "top",
       type: 'success',
       textStyle: { textAlign: "center" }

@@ -29,8 +29,9 @@ class HomeModel {
     let action = StackActions.reset({
       index: 0,
       key: null,
-      actions: [NavigationActions.navigate({ routeName: 'login'})]
+      actions: [NavigationActions.navigate({ routeName: 'loading'})]
     })
+    storage.store_data({logged: false});
     view.dispatch(action);
   }
 

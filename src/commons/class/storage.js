@@ -13,6 +13,7 @@ class Storage {
     storage_data = {
       username : ''
       ,password : ''
+      ,logged: false
     };
     self.load_data();
   }
@@ -38,19 +39,24 @@ class Storage {
     return storage_data.password;
   }
 
+  get_logged(){
+    return storage_data.logged;
+  }
+
   store_data(_args){
-    let defArgs = {username: '', password: ''};
+    let defArgs = {username: storage_data.username, password: storage_data.password, logged: false};
     let args = Object.assign({}, defArgs, _args);
 
     AsyncStorage.getItem('loggedIn').then(data => AsyncStorage.setItem('loggedIn', JSON.stringify(args)));
 
     storage_data.username = args.username;
     storage_data.password = args.password;
+    storage_data.logged = args.logged;
   }
 
   validate_value(){
     var redir = true;
-    if(storage_data.username == undefined || storage_data.password == undefined){
+    if(storage_data.username == undefined || storage_data.password == undefined || storage_data.logged == undefined){
       redir = false
     }
     return redir;
