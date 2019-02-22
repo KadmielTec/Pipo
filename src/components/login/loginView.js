@@ -170,8 +170,8 @@ class LoginView extends Template {
 
         <Footer style={{ backgroundColor: "white" }}>
 					<View style={{ alignItems: "center", opacity: 0.5, flexDirection: "row" }}>
-						<View padder>
-							<Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>Hecho con amor en Kadmiel</Text>
+						<View padder style={{alignItems: "center", flexDirection: "row"}}>
+							<Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{'Hecho con'}</Text><Icon name={'heart'} size={20} /><Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{'en Kadmiel'}</Text>
 						</View>
 					</View>
 				</Footer>

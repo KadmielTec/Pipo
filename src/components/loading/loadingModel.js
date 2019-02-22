@@ -16,6 +16,7 @@ class LoadingModel {
   }
 
   redirect(){
+    // El motivo de que se ejecute la validación un segundo después de que se abre la aplicación es porque en donde se guardan los regitros (AsyncStorage) no carga inmediatamente se abre la aplicación sino un tiempo después.
     setTimeout(() => {
       if(storage.validate_value() && storage.get_logged()){
         view.replace('home');
