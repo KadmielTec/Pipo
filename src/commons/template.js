@@ -47,6 +47,10 @@ class Template extends Component {
       popToTop();
     }
 
+    dispatch(action){
+      self.props.navigation.dispatch(action)
+    }
+
 }
 
 module.exports = Template;
