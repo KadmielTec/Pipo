@@ -28,7 +28,7 @@ class LoadingView extends Template {
 
   render(){
     return(
-      <View style={{ felx: 1, alignItems: "center", justifyContent: 'center' }}>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: 'center', backgroundColor: 'white' }}>
         <Icon name={"pipo"} size={150} color={'#FF7B08'} />
         <View padder>
           <Text style={{color: '#5A5A5A', fontFamily: 'Ubuntu', fontStyle: 'italic', fontSize: 15}}>Aprende con Pipo</Text>
