@@ -6,27 +6,22 @@ import {
   ,View
   ,TouchableOpacity
 } from 'react-native';
+
 import {
   Container,
   Header,
   Left,
   Right,
   Body,
-  Title,
-  Content,
-  Item,
-  Input,
-  Label,
-  Form,
   Button,
   Thumbnail
 } from "native-base";
-import { msg_home } from '../../commons/texts';
-import { Avatar } from 'react-native-elements';
+
 import HomeController from './homeController';
 import HomeModel from './homeModel';
 import Template from '../../commons/template';
 import Icon from '../../commons/components/icon';
+import { get_peng_images } from '../../commons/images';
 
 class HomeView extends Template {
 
@@ -68,7 +63,7 @@ class HomeView extends Template {
               <Icon name={'reload'} size={20} />
             </TouchableOpacity>
           </View>
-          <Thumbnail style={{borderRadius: 100, width: 200, height: 200}} source={{uri: 'https://c1.staticflickr.com/6/5100/5455782332_41a421d75e_b.jpg'}} />
+          <Thumbnail style={{borderRadius: 100, width: 200, height: 200}} source={get_peng_images('baby')} />
           <Text style={{fontFamily: 'Ubuntu'}}>{this.state.user}</Text>
           <Button full large light onPress={this.controller.play} style={{marginVertical: 20}}>
             <Text style={{fontFamily: 'Ubuntu', color: '#FF7B08'}}>¡Jugar!</Text>
