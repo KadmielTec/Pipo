@@ -133,8 +133,8 @@ class QuestionModel {
     view.setState({lifesVisible: true})
     if(lifes <= 0){
       Alert.alert(
-        ':(',
-        'No le quedan más vidas',
+        '😔',
+        'No te quedan más vidas',
         [
           {text: 'OK', onPress: () => view.pop()},
         ],
