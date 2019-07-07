@@ -5,10 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "type": "chrome",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\start"
+            "name": "Launch Chrome",
+            "url": "http://localhost:8081",
+            "webRoot": "${workspaceFolder}/BackEnd"
+        },
+        {
+            "name": "Debug Android",
+            "program": "${workspaceRoot}/App.js",
+            "type": "reactnative",
+            "request": "launch",
+            "platform": "android"
         }
     ]
 }
