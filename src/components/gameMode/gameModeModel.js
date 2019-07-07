@@ -1,6 +1,5 @@
 'use strict'
 
-import React, { Component } from 'react';
 
 var view;
 
@@ -12,11 +11,11 @@ class GameModeModel {
     let self = this;
     params = view.get_params();
     let ds = [
-      {title: 'Aprende', onPress:() => self.onPressMode('Aprende')}
-      ,{title: 'Contrareloj', onPress:() => self.onPressMode('Contrareloj')}
-      ,{title: 'Libre', onPress:() => self.onPressMode('Libre')}
-      ,{title: 'Competición', onPress:() => self.onPressMode('Competición')}
-      ,{title: 'Retar', onPress:() => self.onPressMode('Retar')}
+      {title: 'Clásico', onPress:() => self.onPressMode('Aprende')}
+      ,{title: '?????', onPress:() => self.onPressMode('Contrareloj')}
+      ,{title: '?????', onPress:() => self.onPressMode('Libre')}
+      ,{title: '?????', onPress:() => self.onPressMode('Competición')}
+      ,{title: '?????', onPress:() => self.onPressMode('Retar')}
     ];
     view.state = {
       dataSource: ds,

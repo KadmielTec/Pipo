@@ -1,22 +1,16 @@
 'use strict'
 
-import React, { Component } from 'react';
-import {
-  Text
-  ,View
-  ,ScrollView
-  ,FlatList
-} from 'react-native';
-
-import { msg_home } from '../../commons/texts';
-
-import { Header, List, ListItem } from 'react-native-elements';
-
+import React from 'react';
+import { FlatList, ScrollView, View } from 'react-native';
+import { Header, ListItem } from 'react-native-elements';
+import Template from '../../commons/template';
 import GameModeController from './gameModeController';
-
 import GameModeModel from './gameModeModel';
 
-import Template from '../../commons/template';
+
+
+
+
 
 class GameModeView extends Template {
 
@@ -43,16 +37,14 @@ class GameModeView extends Template {
             <FlatList
               data={this.state.dataSource}
               keyExtractor={(item, index) => index}
-              renderItem={(item) => {
+              renderItem={({item}, index) => {
+                let disabled = item.title == 'Clásico' ? false : true;
                 return(
-                  // <Button
-                  //   title = {item.item.title}
-                  //   onPress = {item.item.onPress}
-                  // />
                   <ListItem
-                    key={item.index}
-                    title={item.item.title}
-                    onPress={item.item.onPress}
+                    key={index}
+                    title={item.title}
+                    onPress={item.onPress}
+                    disabled={disabled}
                   />
                 )
               }}

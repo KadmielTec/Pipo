@@ -1,8 +1,6 @@
 'use strict'
 
-import React, { Component } from 'react';
 ///import Sound from 'react-native-sound';
-
 import { Alert } from 'react-native';
 
 let storage = require('../../commons/class/storage');
@@ -131,8 +129,8 @@ class QuestionModel {
 
   async decrementLifes(){
     let lifes = view.state.lifes - 1;
-    await view.setState({lifes: lifes})
-    view.setState({lifesVisible: true});
+    await view.setState({lifes: lifes});
+    view.setState({lifesVisible: true})
     if(lifes <= 0){
       Alert.alert(
         ':(',
@@ -146,7 +144,7 @@ class QuestionModel {
   }
 
   calcPoints(){
-    let lostLifes = view.state.lifes - 3;
+    let lostLifes = 3 - view.state.lifes;
     let points = view.state.lifes * 100;
     let currentPoints = storage.get_points() ? storage.get_points() : 0
     storage.store_data({points: points + currentPoints})
@@ -160,8 +158,8 @@ class QuestionModel {
     )
   }
 
-  validateAnswer(selectedOption){
-    view.setState({lifesVisible: false});
+  async validateAnswer(selectedOption){
+    await view.setState({lifesVisible: false});
     let correct = view.state.themeQuestions[view.state.currentIndex].correcta == selectedOption
     if(correct) hands.pause(() => {
       hands.play();
