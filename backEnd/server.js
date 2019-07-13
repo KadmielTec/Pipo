@@ -5,31 +5,32 @@ var app= express();
 
 app.get('/ListCategories', function(req,res)
 {
-    mongodbClient.connect("mongodb://localhost:27017/",function(err,db){
+    mongodbClient.connect("mongodb://localhost:27017/",{ useNewUrlParser: true },function(err,db){
         if (err) throw err;
         var dbo = db.db("ac_pipo");
-        dbo.collection("categorias").findOne({}, function(err, result) {
+        dbo.collection("categorias").find({}).toArray(function(err, result) {
           if (err) throw err;
-          console.log(result.name);
+          console.log(result);
           res.send(result);
           db.close();
         });    
-});
-
+    });
 });
 
 app.get('/getQuestions',function(req,res){
-    mongodbClient.connect("mongodb://localhost:27017/",function(err,db){
+    mongodbClient.connect("mongodb://localhost:27017/",{ useNewUrlParser: true },function(err,db){
         if (err) throw err;
         var dbo = db.db("ac_pipo");
-        dbo.collection("preguntas").findOne({}, function(err, result) {
+        dbo.collection("preguntas").find({}).toArray(function(err, result) {
           if (err) throw err;
-          console.log(result.name);
+          console.log(result);
           res.send(result);
           db.close();
         });  
     }); 
 });
+
+
 
 var server = app.listen(8081, function () {
     var host = server.address().address;

@@ -6,3 +6,5 @@ Para instalar el repositorio:
   <li>Ejecutar el comando <code>npm i && react-native link</code> sobre la carpeta del proyecto en la consola</li>
   <li><code>react-native run-android</code> o <code>react-native run-ios</code></li>
 </ol>
+
+En caso tal que salga el error `"react-native" no se reconoce como un comando interno o externo, programa o archivo por lotes ejecutable.` correr el comando `npm i -g react-native-cli` e intentar otra vez.
