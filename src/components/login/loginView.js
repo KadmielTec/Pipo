@@ -54,7 +54,7 @@ class LoginView extends Template {
 					</Body>
 				</Header>
 
-        <Content style={{backgroundColor: '#EBEBEB'}}>
+        <Content style={{backgroundColor: '#fcfbfa'}}>
           {login &&
             <View>
               <Form>

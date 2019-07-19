@@ -33,7 +33,7 @@ class LoginController {
       });
       return;
     }
-    model.login();
+    model.loginApi();
   }
 
   register(){
