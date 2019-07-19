@@ -1,14 +1,10 @@
 'use strict'
 
-import React, { Component } from 'react';
-import {
-  Text
-  ,ScrollView
-} from 'react-native';
-
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
 import Template from '../commons/template';
 
-import {msg_about} from '../commons/texts';
+
 
 class AboutUs extends Template {
 
@@ -23,11 +19,9 @@ class AboutUs extends Template {
   render(){
     return(
       <ScrollView style={{flex: 1, paddingTop: 40, paddingHorizontal: 5}}>
-        <Text style={{fontSize: 24}}>{msg_about.str_mision_title}</Text>
-        <Text>{msg_about.str_mision_body}</Text>
-        <Text style={{fontSize: 24, marginTop:20}}>{msg_about.str_vision_title}</Text>
-        <Text>{msg_about.str_vision_body}</Text>
-        <Text style={{marginTop:20}}>{'Servicio técnico en dispositivos con S.O. tanto en software como en hardware además de la creación de juegos, software, paginas web, intranet y más.'}</Text>
+        <Text>
+          {'Pipo es un pingüino al que le encanta aprender y enseñar lo que sabe sobre muchas cosas de diversos temas que a través de los años ha ido aprendiendo, pero sólo hasta ahora y luego de mucho tiempo de estudio a decidido enseñar o reforzar los temas de las diferentes categorías de preguntas que le han interesado. Pipo es un pingüino al que también le gusta que le enseñen y está dispuesto a aprender incluso sobre otros temas que puede que a ti te interesen.'}
+        </Text>
       </ScrollView>
     )
   }
