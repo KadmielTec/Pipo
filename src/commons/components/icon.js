@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { font_icons } from '../images';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
-import icoMoonConfig from '../../../node_modules/react-native-vector-icons/glyphmaps/selection.json';
+import icoMoonConfig from '../../../node_modules/react-native-vector-icons/glyphmaps/icomoon.json';
 const IconMoon = createIconSetFromIcoMoon(icoMoonConfig);
 
 import PropTypes from 'prop-types';
