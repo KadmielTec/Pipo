@@ -64,6 +64,8 @@ app.post('/register',function(req,res){
     });  
 });
 
+
+
 //Misc functions
 
 function encryptPassword(password, saltsRound){

@@ -97,12 +97,23 @@ class LoginView extends Template {
                 </Button>
               </View>
 
+              <View style={{padding: 10}}>
+                <Button
+                  block
+                  light
+                  title={msg_login.play}
+                  onPress={this.controller.play}
+                >
+                  <Text>Jugar</Text>
+                </Button>
+              </View>
+
               <TouchableWithoutFeedback onPress={() => this.controller.changeForm()} style={{padding: 10}}>
                 <View style={{ alignItems: 'center'}}>
                   <Text>Registrarse</Text>
                 </View>
               </TouchableWithoutFeedback>
-            </View>
+          </View>
           }
           {!login &&
             <View>

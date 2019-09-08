@@ -15,7 +15,7 @@ class ThemeModel {
       ,{title: 'Ciencia', theme: 1, icon: 'science', color:'#008bcb'}
       ,{title: 'Historia', theme: 2, icon: 'history', color:'#4c2f27'}
       ,{title: 'Ortografía', theme: 3, icon: 'orthography', color:'#008f39'}
-      ,{title: 'Aleatorio', theme: 4, icon: 'random', color:'pink'}
+      ,{title: 'Aleatorio', theme: 4, icon: 'random', color:'#000000'}
     ]
 
     if(ds.length % 2 != 0) ds.push({blank: true});

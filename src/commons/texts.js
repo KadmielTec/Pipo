@@ -5,7 +5,8 @@ let msg_login_es = {
   username: 'Usuario',
   password: 'Contraseña',
   repeatPassword: 'Repetir contraseña',
-  register: 'Registrar'
+  register: 'Registrar',
+  play: 'jugar'
 }
 
 let msg_home_es = {

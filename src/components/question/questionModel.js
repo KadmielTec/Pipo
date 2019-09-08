@@ -123,8 +123,18 @@ class QuestionModel {
 
   incrementCurrent(){
     let index = (view.state.currentIndex < qlength - 1) ? view.state.currentIndex + 1 : -1;
-    if(index > -1) view.setState({currentQuestion: view.state.themeQuestions[index].pregunta, currentAnswers: view.state.themeAnswers[index], currentIndex: index, wrongAnswer: false, lifesVisible: true});
-    else self.calcPoints();
+    if(index > -1) {
+      view.setState({
+      currentQuestion: view.state.themeQuestions[index].pregunta, 
+      currentAnswers: view.state.themeAnswers[index], 
+      currentIndex: index, 
+      wrongAnswer: false, 
+      lifesVisible: true});
+      }
+    else 
+    {
+      self.calcPoints()
+    };
   }
 
   async decrementLifes(){

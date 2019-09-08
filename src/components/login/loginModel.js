@@ -22,7 +22,7 @@ class LoginModel {
   }
 
   loginApi(){
-    fetch('http://192.168.1.55:3000/login', {
+    fetch('http://192.168.1.52:3000/login', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -34,13 +34,25 @@ class LoginModel {
     }),
   })
   .then(response => response.json())
-  .then(responseJson =>
-    console.log(responseJson)
+  .then(responseJson =>{
+    console.log(responseJson.profileData);
+    if(view.state.username!=responseJson.profileData.usuario){
+      return;
+    }
+     Toast.show({
+        text: "Bienvenido: " + responseJson.profileData.nombre,
+        duration: 3000,
+        position: "center",
+        type: 'success',
+        textStyle: { textAlign: "center" }
+      });
+    view.replace('home');
+  }
   )
   .catch((error) => {
     console.error(error);
   });
-  view.replace('home');
+  
   }
 
   login(){

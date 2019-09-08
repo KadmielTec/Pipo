@@ -84,6 +84,10 @@ class LoginController {
     model.changeForm();
   }
 
+  play(){
+    view.replace('theme');
+  }
+
 }
 
 module.exports = LoginController;
