@@ -1,15 +1,13 @@
 'use strict'
 
-///import Sound from 'react-native-sound';
 import { Alert } from 'react-native';
+import {hands,fail} from '../../commons/sounds';
 
 let storage = require('../../commons/class/storage');
 
 var view;
 var self;
 var qlength;
-var hands = null;
-var SoundPlayer = require('react-native-sound');
 
 class QuestionModel {
   constructor(_view) {
@@ -24,14 +22,6 @@ class QuestionModel {
     // Ortografía: 3
     // Aleatorio: 4
 
-
-   SoundPlayer.setCategory('Playback');
-
-   hands = new SoundPlayer ('aplausos.mp3', SoundPlayer.MAIN_BUNDLE,(error) => {
-      if (error){
-       //ToastAndroid.show('Error', ToastAndroid.SHORT);
-    }
-  });
 
     const QUESTIONS = [
       // Matemáticas
@@ -161,11 +151,12 @@ class QuestionModel {
   async validateAnswer(selectedOption){
     await view.setState({lifesVisible: false});
     let correct = view.state.themeQuestions[view.state.currentIndex].correcta == selectedOption
-    if(correct) hands.pause(() => {
+    if(correct) hands.stop(() => {
       hands.play();
     });
-    else self.decrementLifes();
-    self.incrementCurrent()
+    else  {self.decrementLifes(); fail.play();}   
+    hands.stop();
+    self.incrementCurrent();
   }
 
 }
