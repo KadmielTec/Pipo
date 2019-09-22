@@ -6,10 +6,13 @@ var bodyParser= require('body-parser');
 app.use(bodyParser.json()) 
 var urlencodedParser = bodyParser.urlencoded({extended:false});
 var BCRYPT_SALT_ROUNDS=12; 
+var connectionString= "mongodb+srv://Kadm1elPr0d:LCqG4G5Xk8JyCeAy@cluster0-pfli7.azure.mongodb.net/test?retryWrites=true&w=majority";
 
 app.get('/ListCategories', function(req,res)
 {
-    mongodbClient.connect("mongodb://localhost:27017/",{ useNewUrlParser: true },function(err,db){
+  mongodbClient.connect(connectionString
+  ,{ useNewUrlParser: true },function(err,db){
+   // mongodbClient.connect("mongodb://localhost:27017/",{ useNewUrlParser: true },function(err,db){
         if (err) throw err;
         var dbo = db.db("ac_pipo");
         dbo.collection("categorias").find({}).toArray(function(err, result) {
@@ -21,7 +24,7 @@ app.get('/ListCategories', function(req,res)
 });
 
 app.get('/getQuestions',function(req,res){
-    mongodbClient.connect("mongodb://localhost:27017/",{ useNewUrlParser: true },function(err,db){
+    mongodbClient.connect(connectionString,{ useNewUrlParser: true },function(err,db){
         if (err) throw err;
         var dbo = db.db("ac_pipo");
         dbo.collection("preguntas").find({}).toArray(function(err, result) {
@@ -33,7 +36,7 @@ app.get('/getQuestions',function(req,res){
 });
 
 app.post('/login',function(req,res){
-  mongodbClient.connect("mongodb://localhost:27017/",{ useNewUrlParser: true },function(err,db){
+  mongodbClient.connect(connectionString,{ useNewUrlParser: true },function(err,db){
     if (err) throw err;
     var dbo = db.db("ac_pipo");
     dbo.collection("usuarios").findOne({usuario: req.body.usuario},function(err, result) {
@@ -52,7 +55,7 @@ app.post('/login',function(req,res){
 });
 
 app.post('/register',function(req,res){
-  mongodbClient.connect("mongodb://localhost:27017/",{ useNewUrlParser: true },function(err,db){
+  mongodbClient.connect(connectionString,{ useNewUrlParser: true },function(err,db){
     if (err) throw err;
     var dbo = db.db("ac_pipo");
     var Users = buildUsersJson(req.body);

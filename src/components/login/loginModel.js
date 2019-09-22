@@ -37,6 +37,13 @@ class LoginModel {
   .then(responseJson =>{
     console.log(responseJson.profileData);
     if(view.state.username!=responseJson.profileData.usuario){
+      Toast.show({
+        text: "Usuario o contraseña incorrecto",
+        duration: 4000,
+        position: "top",
+        type: 'danger',
+        textStyle: { textAlign: "center" }
+      });
       return;
     }
      Toast.show({
@@ -53,23 +60,6 @@ class LoginModel {
     console.error(error);
   });
   
-  }
-
-  login(){
-    let username = storage.get_username();
-    let password = storage.get_password();
-    if(view.state.username != username || view.state.password != password){
-      Toast.show({
-        text: "Usuario o contraseña incorrecto",
-        duration: 4000,
-        position: "top",
-        type: 'danger',
-        textStyle: { textAlign: "center" }
-      });
-      return;
-    }
-    storage.store_data({logged: true});
-    view.replace('home');
   }
 
   register(){
