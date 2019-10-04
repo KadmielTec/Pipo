@@ -22,7 +22,7 @@ class LoginModel {
   }
 
   loginApi(){
-    fetch('http://192.168.1.52:3000/login', {
+    fetch('https://backendpipo.herokuapp.com/login', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
