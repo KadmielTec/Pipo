@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { Toast } from "native-base";
+import {inicio} from '../../commons/sounds';
 
 let storage = require('../../commons/class/storage');
 
@@ -54,6 +55,7 @@ class LoginModel {
         textStyle: { textAlign: "center" }
       });
     view.replace('home');
+    inicio.play();
   }
   )
   .catch((error) => {

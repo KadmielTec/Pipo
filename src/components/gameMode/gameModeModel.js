@@ -1,8 +1,5 @@
 'use strict'
-
-
 var view;
-
 var params;
 
 class GameModeModel {

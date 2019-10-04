@@ -3,11 +3,13 @@
 import React, { Component } from 'react';
 import { NavigationActions, StackActions } from 'react-navigation';
 import { Alert } from 'react-native';
+import {inicio, history} from '../../commons/sounds';
 
 let storage = require('../../commons/class/storage');
 
 var view;
 var self;
+
 
 class HomeModel {
   constructor(_view) {
@@ -18,10 +20,13 @@ class HomeModel {
       user: user,
       points: points ? points : 0
     }
+ 
   }
 
   play(){
     view.redirect('theme');
+    inicio.stop();
+    history.play();
   }
 
   aboutUs(){
