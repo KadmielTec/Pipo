@@ -1,7 +1,7 @@
 'use strict'
 
 import { Alert } from 'react-native';
-import {hands,fail} from '../../commons/sounds';
+import { fail, hands } from '../../commons/sounds';
 
 let storage = require('../../commons/class/storage');
 
@@ -105,15 +105,15 @@ class QuestionModel {
       currentIndex: 0,
       theme: params.theme,
       gametype: params.gametype,
-      wrongAnswer: false,
       lifes: 3,
       lifesVisible: true,
+      active: true,
     }
   }
 
   incrementCurrent(){
     let index = (view.state.currentIndex < qlength - 1) ? view.state.currentIndex + 1 : -1;
-    if(index > -1) view.setState({currentQuestion: view.state.themeQuestions[index].pregunta, currentAnswers: view.state.themeAnswers[index], currentIndex: index, wrongAnswer: false, lifesVisible: true});
+    if(index > -1) view.setState({active: true, currentQuestion: view.state.themeQuestions[index].pregunta, currentAnswers: view.state.themeAnswers[index], currentIndex: index, lifesVisible: true});
     else self.calcPoints();
   }
 
@@ -130,13 +130,13 @@ class QuestionModel {
         ],
         { cancelable: false }
       )
-    }
+    }else view.setState({active: true});
   }
 
   calcPoints(){
     let lostLifes = 3 - view.state.lifes;
     let points = view.state.lifes * 100;
-    let currentPoints = storage.get_points() ? storage.get_points() : 0
+    let currentPoints = storage.get_points() || 0;
     storage.store_data({points: points + currentPoints})
     Alert.alert(
       '¡Felicidades!',
@@ -149,12 +149,13 @@ class QuestionModel {
   }
 
   async validateAnswer(selectedOption){
-    await view.setState({lifesVisible: false});
+    if(!view.state.active) return;
+    await view.setState({lifesVisible: false, active: false});
     let correct = view.state.themeQuestions[view.state.currentIndex].correcta == selectedOption
     if(correct) hands.stop(() => {
       hands.play();
     });
-    else  {self.decrementLifes(); fail.play();}   
+    else  {self.decrementLifes(); fail.play();}
     hands.stop();
     self.incrementCurrent();
   }
