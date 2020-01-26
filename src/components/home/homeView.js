@@ -1,27 +1,15 @@
 'use strict'
 
-import React, { Component } from 'react';
-import {
-  Text
-  ,View
-  ,TouchableOpacity
-} from 'react-native';
-
-import {
-  Container,
-  Header,
-  Left,
-  Right,
-  Body,
-  Button,
-  Thumbnail
-} from "native-base";
-
-import HomeController from './homeController';
-import HomeModel from './homeModel';
-import Template from '../../commons/template';
+import { Body, Button, Container, Header, Left, Right, Thumbnail } from "native-base";
+import React from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import Icon from '../../commons/components/icon';
 import { get_peng_images } from '../../commons/images';
+import Template from '../../commons/template';
+import HomeController from './homeController';
+import HomeModel from './homeModel';
+
+
 
 class HomeView extends Template {
 
@@ -53,7 +41,7 @@ class HomeView extends Template {
             </Button>
           </Right>
         </Header>
-        <Body style={{padding: 10}}>
+        <Body style={{padding: 10, width: '100%'}}>
           <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row', marginVertical: 5, marginLeft: '60%'}}>
             <View style={{alignItems: 'flex-end', justifyContent: 'center', backgroundColor: 'whitesmoke', borderRadius: 8, padding: 3, flexDirection: 'row', marginRight: 10}}>
               <Icon name={'fish'} size={20} />
@@ -65,7 +53,7 @@ class HomeView extends Template {
           </View>
           <Thumbnail style={{borderRadius: 100, width: 200, height: 200}} source={get_peng_images('baby')} />
           <Text style={{fontFamily: 'Ubuntu'}}>{this.state.user}</Text>
-          <Button full large light onPress={this.controller.play} style={{marginVertical: 20}}>
+          <Button full large light onPress={this.controller.play} style={{margin: 20}}>
             <Text style={{fontFamily: 'Ubuntu', color: '#FF7B08'}}>¡Jugar!</Text>
           </Button>
         </Body>
