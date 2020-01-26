@@ -22,7 +22,7 @@ class LoadingModel {
         view.replace('home');
         return;
       }
-      view.replace('login');
+      view.replace('language');
     }, 1000)
   }
 }
