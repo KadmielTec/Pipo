@@ -43,8 +43,8 @@ class HomeView extends Template {
         </Header>
         <Body style={{padding: 10, width: '100%'}}>
           <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row', marginVertical: 5, marginLeft: '60%'}}>
-            <View style={{alignItems: 'flex-end', justifyContent: 'center', backgroundColor: 'whitesmoke', borderRadius: 8, padding: 3, flexDirection: 'row', marginRight: 10}}>
-              <Icon name={'fish'} size={20} />
+            <View style={{alignItems: 'flex-end', justifyContent: 'center', backgroundColor: 'whitesmoke', borderRadius: 8, padding: 5, flexDirection: 'row', marginRight: 10}}>
+              <Icon name={'fish'} size={20} style={{marginRight: 3}} color={'#FF7B08'} />
               <Text style={{fontSize: 20}}>{this.state.points}</Text>
             </View>
             <TouchableOpacity onPress={() => this.controller.reload()}>
