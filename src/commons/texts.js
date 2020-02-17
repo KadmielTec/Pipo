@@ -44,37 +44,4 @@ const strings = new LocalizedStrings({
 
 });
 
-
-// let msg_login_es = {
- 
-// }
-
-// let msg_home_es = {
- 
-// }
-
-// let msg_themes_es = {
-//   str_title_default: ""
-// }
-
-// let msg_questions_es = {
-//   str_title_default: ""
-// }
-
-// let msg_about_es = {
-  
-// }
-
-// var msg_login = msg_login_es;
-// var msg_home = msg_home_es;
-// var msg_themes = msg_themes_es;
-// var msg_questions = msg_questions_es;
-// var msg_about = msg_about_es;
-
-module.exports = strings;  /* {
-  msg_login
-  ,msg_home
-  ,msg_themes
-  ,msg_questions
-  ,msg_about 
-}; */ 
+module.exports = strings;

@@ -5,6 +5,7 @@ import {View , Text , ScrollView, Image, StyleSheet} from 'react-native';
 import { Body, Button, Container, Header, Left, Right, Content, ListItem,Icon,Switch } from "native-base";
 import stringsOfLanguages from '../../commons/texts'
 import Template from '../../commons/template';
+import Icons from '../../commons/components/icon';
 
 class LanguageView extends Template {
 
@@ -24,7 +25,8 @@ constructor(props){
 
 setText(value) {
     stringsOfLanguages.setLanguage(value);
-    Template.redirect('login' , {JSON_Clicked_Item:value,});
+    console.log(value);
+    this.props.navigation.navigate('login' , value);
 }
 
 render(){
@@ -33,7 +35,7 @@ render(){
         <Header androidStatusBarColor={'#FF7B08'} style={{ backgroundColor: '#FF7B08' }}>
             <Left/>
             <Body style={{ alignItems: 'flex-end', justifyContent: 'center', marginRight: 20 }}>
-            <Icon name={'pipo'} style={{ color: 'white' }} size={40} />
+            <Icons name={'pipo'} style={{ color: 'white' }} size={40} />
             </Body>
             <Right />
         </Header>

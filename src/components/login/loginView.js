@@ -20,7 +20,7 @@ import {
   Form,
   Button
 } from "native-base";
-import {stringsOfLanguages} from '../../commons/texts';
+import stringsOfLanguages from '../../commons/texts';
 import LoginController from './loginController';
 import LoginModel from './loginModel';
 import Template from '../../commons/template';
@@ -37,6 +37,7 @@ class LoginView extends Template {
     super(props);
     this.model = new LoginModel(this);
     this.controller = new LoginController(this,this.model);
+    console.log(stringsOfLanguages);
   }
 
   render(){

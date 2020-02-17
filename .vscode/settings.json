@@ -1,4 +1,7 @@
 {
-    "github.gitCommand": "{     // Is git enabled     \"git.enabled\": true,      // Path to the git executable     \"git.path\": \"C:\\\\Program Files\\\\Git-bash.exe\"      // other settings }",
-    "typescript.validate.enable": false
+    // Is git enabled     
+    "git.enabled": true,      
+    // Path to the git executable     
+    "git.path": "C:\\Program Files\\Git\\Git-bash.exe"      
+    // other settings    
 }
