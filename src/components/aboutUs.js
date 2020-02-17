@@ -7,7 +7,6 @@ import { Card } from 'react-native-elements';
 import Icon from '../commons/components/icon';
 import Template from '../commons/template';
 
-
 class AboutUs extends Template {
 
   static navigationOptions = {
@@ -24,7 +23,7 @@ class AboutUs extends Template {
         <Header androidStatusBarColor={'#FF7B08'} style={{ backgroundColor: '#FF7B08' }}>
           <Left>
             <Button hasText transparent style={{ height: '100%' }}>
-              <Text onPress={this.pop}>Back</Text>
+              <Text onPress={this.pop}>Atrás</Text>
             </Button>
           </Left>
           <Body style={{ alignItems: 'flex-end', justifyContent: 'center', marginRight: 20 }}>
@@ -34,7 +33,7 @@ class AboutUs extends Template {
         </Header>
         <Body style={{ padding: 10 }}>
           <Card
-            containerStyle={{ width: 300, borderRadius: 5 }}
+            containerStyle={{ width: '90%', borderRadius: 5 }}
           >
             <Text>
               {'Pipo es un pingüino al que le encanta aprender y enseñar lo que sabe sobre muchas cosas de diversos temas que a través de los años ha ido aprendiendo, pero sólo hasta ahora y luego de mucho tiempo de estudio a decidido enseñar o reforzar los temas de las diferentes categorías de preguntas que le han interesado. Pipo es un pingüino al que también le gusta que le enseñen y está dispuesto a aprender incluso sobre otros temas que puede que a ti te interesen.'}
@@ -44,7 +43,6 @@ class AboutUs extends Template {
       </Container>
     )
   }
-
 }
 
 module.exports = AboutUs;

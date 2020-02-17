@@ -1,24 +1,17 @@
 'use strict'
 
-import React, { Component } from 'react';
-import {
-  Text
-  ,View
-  ,ScrollView
-  ,FlatList
-} from 'react-native';
-
-import { msg_home } from '../../commons/texts';
-
+import React from 'react';
+import { FlatList, ScrollView, Text, View } from 'react-native';
+import { Card, ListItem, Rating } from 'react-native-elements';
+import Template from '../../commons/template';
 import QuestionController from './questionController';
-
 import QuestionModel from './questionModel';
 
-import Template from '../../commons/template';
 
-import Visible from '../../commons/components/visible';
 
-import { Card, ListItem, Rating } from 'react-native-elements';
+
+
+
 
 class QuestionView extends Template {
 
@@ -66,9 +59,6 @@ class QuestionView extends Template {
               )
             }}
           />
-          <Visible visible={this.state.wrongAnswer}>
-            <Text>{'Respuesta erronea!'}</Text>
-          </Visible>
         </View>
       </ScrollView>
     )
