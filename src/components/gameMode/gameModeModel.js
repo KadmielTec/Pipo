@@ -1,4 +1,7 @@
-"use strict";
+'use strict'
+
+import { fail, hands, history } from '../../commons/sounds';
+
 var view;
 var params;
 var languageSelected;
@@ -38,8 +41,9 @@ class GameModeModel {
     };
   }
 
-  onPressMode(type) {
-    view.redirect("question", { theme: params.theme, gametype: type });
+  onPressMode(type){
+    view.redirect('question', {theme: params.theme, gametype: type})
+    history.stop();
   }
 }
 
