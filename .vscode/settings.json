@@ -2,6 +2,6 @@
     // Is git enabled     
     "git.enabled": true,      
     // Path to the git executable     
-    "git.path": "C:\\Program Files\\Git\\Git-bash.exe"      
+    "git.path": "C:\\Program Files\\Git\\Git-bash.exe"
     // other settings    
 }

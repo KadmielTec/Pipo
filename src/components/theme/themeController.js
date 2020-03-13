@@ -10,10 +10,11 @@ class ThemeController {
   constructor(_view,_model) {
     view = _view;
     model = _model;
+    
   }
 
-  themeSelected(theme){
-    model.themeSelected(theme);
+  themeSelected(theme,language){
+    model.themeSelected(theme,language);
   }
 
 }

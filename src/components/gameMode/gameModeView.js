@@ -6,12 +6,7 @@ import { Header, ListItem } from 'react-native-elements';
 import Template from '../../commons/template';
 import GameModeController from './gameModeController';
 import GameModeModel from './gameModeModel';
-
-
-
-
-
-
+import stringsOfLanguages from '../../commons/texts';
 class GameModeView extends Template {
 
   static navigationOptions = {
@@ -22,6 +17,7 @@ class GameModeView extends Template {
     super(props);
     this.model = new GameModeModel(this);
     this.controller = new GameModeController(this,this.model);
+    console.log(this);
   }
 
   render(){
@@ -29,7 +25,7 @@ class GameModeView extends Template {
       <View style={{flex: 1}}>
         <Header
           leftComponent={{ icon: 'arrow-back', color: '#fff', onPress: () => this.pop() }}
-          centerComponent={{ text: 'MODO DE JUEGO', style: { color: '#fff' } }}
+          centerComponent={{ text: stringsOfLanguages.game_mode, style: { color: '#fff' } }}
           backgroundColor={'#FF7B08'}
         />
         <ScrollView>
@@ -38,7 +34,7 @@ class GameModeView extends Template {
               data={this.state.dataSource}
               keyExtractor={(item, index) => index}
               renderItem={({item}, index) => {
-                let disabled = item.title == 'Clásico' ? false : true;
+                let disabled = item.title == 'Clásico' || 'Classic' ? false : true;
                 return(
                   <ListItem
                     key={index}

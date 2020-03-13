@@ -37,7 +37,6 @@ class LoginView extends Template {
     super(props);
     this.model = new LoginModel(this);
     this.controller = new LoginController(this,this.model);
-    console.log(stringsOfLanguages);
   }
 
   render(){
@@ -103,7 +102,7 @@ class LoginView extends Template {
                   block
                   light
                   title={stringsOfLanguages.play}
-                  onPress={this.controller.play}
+                  onPress={this.controller.play()}
                 >
                   <Text>{stringsOfLanguages.play}</Text>
                 </Button>
@@ -183,7 +182,7 @@ class LoginView extends Template {
         <Footer style={{ backgroundColor: "white" }}>
 					<View style={{ alignItems: "center", opacity: 0.5, flexDirection: "row" }}>
 						<View padder style={{alignItems: "center", flexDirection: "row"}}>
-							<Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{'Hecho con'}</Text><Icon name={'heart'} size={20} /><Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{'en Kadmiel'}</Text>
+							<Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{stringsOfLanguages.str_made_with_love_1}</Text><Icon name={'heart'} size={20} /><Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{stringsOfLanguages.str_made_with_love_2}</Text>
 						</View>
 					</View>
 				</Footer>

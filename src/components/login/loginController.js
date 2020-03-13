@@ -1,24 +1,25 @@
-'use strict'
+"use strict";
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Toast } from "native-base";
 var view;
 var model;
+var language;
 
 class LoginController {
-
-  constructor(_view,_model) {
+  constructor(_view, _model) {
     view = _view;
     model = _model;
+    language = view.get_params();
   }
 
-  login(){
+  login() {
     if (view.state.username == "") {
       Toast.show({
         text: "Ingrese su usuario",
         duration: 3000,
         position: "top",
-        type: 'danger',
+        type: "danger",
         textStyle: { textAlign: "center" }
       });
       return;
@@ -28,7 +29,7 @@ class LoginController {
         text: "Ingrese la contraseña",
         duration: 3000,
         position: "top",
-        type: 'danger',
+        type: "danger",
         textStyle: { textAlign: "center" }
       });
       return;
@@ -36,13 +37,13 @@ class LoginController {
     model.loginApi();
   }
 
-  register(){
-    if(view.state.username == "") {
+  register() {
+    if (view.state.username == "") {
       Toast.show({
         text: "Ingrese el usuario",
         duration: 3000,
         position: "top",
-        type: 'danger',
+        type: "danger",
         textStyle: { textAlign: "center" }
       });
       return;
@@ -52,7 +53,7 @@ class LoginController {
         text: "Ingrese la contraseña",
         duration: 3000,
         position: "top",
-        type: 'danger',
+        type: "danger",
         textStyle: { textAlign: "center" }
       });
       return;
@@ -62,17 +63,17 @@ class LoginController {
         text: "Ingrese nuevamente la contraseña",
         duration: 3000,
         position: "top",
-        type: 'danger',
+        type: "danger",
         textStyle: { textAlign: "center" }
       });
       return;
     }
-    if(view.state.password !== view.state.password2){
+    if (view.state.password !== view.state.password2) {
       Toast.show({
         text: "Las contraseñas no coinciden",
         duration: 3000,
         position: "top",
-        type: 'danger',
+        type: "danger",
         textStyle: { textAlign: "center" }
       });
       return;
@@ -80,14 +81,13 @@ class LoginController {
     model.register();
   }
 
-  changeForm(){
+  changeForm() {
     model.changeForm();
   }
 
-  play(){
-    view.replace('theme');
+  play() {
+    view.replace("theme", language);
   }
-
 }
 
 module.exports = LoginController;
