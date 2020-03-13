@@ -7,12 +7,6 @@ import Template from '../../commons/template';
 import QuestionController from './questionController';
 import QuestionModel from './questionModel';
 
-
-
-
-
-
-
 class QuestionView extends Template {
 
   static navigationOptions = {

@@ -22,10 +22,10 @@ class ThemeView extends Template {
 
   constructor(props) {
     super(props);
-    console.log("props view theme: "+ props)
     this.model = new ThemeModel(this);
     this.controller = new ThemeController(this,this.model);
     this.languageTheme= this.get_params();
+    console.log("theme view: "+this.get_params());
   }
 
   render(){
@@ -42,6 +42,7 @@ class ThemeView extends Template {
               data={this.state.dataSource}
               keyExtractor={(item, index) => index}
               renderItem={(item) => {
+                console.log(item);
                 return(
                   <ThemeRow
                     title = {item.item.title}

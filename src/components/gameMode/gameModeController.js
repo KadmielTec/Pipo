@@ -12,11 +12,11 @@ class GameModeController {
     view = _view;
     model = _model;
     selectedLanguage= view.get_params();
-    console.log("ctrl gm:" + selectedLanguage.themeLanguage);
+    console.log("ctrl gm language: " + selectedLanguage.themeLanguage);
   }
 
   learn(){
-    model.learn(selectedLanguage.themeLanguage);
+    model.learn();
   }
 
   contraReloj(){

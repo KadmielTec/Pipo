@@ -17,6 +17,7 @@ import {
 import stringsOfLanguages from "../../commons/texts";
 import Template from "../../commons/template";
 import Icons from "../../commons/components/icon";
+import { Flag } from "react-native-svg-flagkit";
 
 class LanguageView extends Template {
   static navigationOptions = {
@@ -27,7 +28,7 @@ class LanguageView extends Template {
     super(props);
     const lang = [
       { shortform: "es", longform: "Español" },
-      { shortform: "en", longform: "Inglés" }
+      { shortform: "en", longform: "English" }
     ];
     global.lang = lang;
   }
@@ -66,7 +67,7 @@ class LanguageView extends Template {
                   key={key}
                   onPress={() => this.setText(item.shortform)}
                 >
-                  <Icon name="wifi" />
+                  
                 </Button>
               </Left>
               <Body>

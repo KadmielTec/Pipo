@@ -14,6 +14,7 @@ class QuestionModel {
     view = _view;
     self = this;
     let params = view.get_params();
+    console.log(params);
 
     //  CÓDIGOS DE LOS TEMAS:
     // Matematicas: 0

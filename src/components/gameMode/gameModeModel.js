@@ -11,6 +11,7 @@ class GameModeModel {
     view = _view;
     let self = this;
     params = view;
+    console.log("gm model: "+ params.get_params());
     let ds = [
       {
         title: "Clásico",
@@ -28,21 +29,14 @@ class GameModeModel {
       //,{title: '?????', onPress:() => self.onPressMode('Retar')}
     ];
 
-    let dsGameMode = [];
-    dsGameMode = ds.filter(val => {
-      return val.language == params;
-    });
-
-    console.log(dsGameMode);
-
     view.state = {
-      dataSource: dsGameMode,
+      dataSource: ds,
       themeName: params.themeName
     };
   }
 
   onPressMode(type){
-    view.redirect('question', {theme: params.theme, gametype: type})
+    view.redirect('question', {theme: params.theme, gametype: type});
     history.stop();
   }
 }

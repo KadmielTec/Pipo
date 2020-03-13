@@ -14,6 +14,7 @@ class ThemeController {
   }
 
   themeSelected(theme,language){
+    console.log("theme ctrl: "+theme);
     model.themeSelected(theme,language);
   }
 

@@ -105,7 +105,8 @@ class ThemeModel {
   }
 
   themeSelected(theme,language) {
-    console.log(language)
+    console.log(language);
+    console.log(theme);
     view.redirect("gameMode", { theme: theme.theme, themeName: theme.title , themeLanguage: language });
   }
 }
