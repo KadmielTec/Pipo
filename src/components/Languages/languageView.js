@@ -27,8 +27,8 @@ class LanguageView extends Template {
   constructor(props) {
     super(props);
     const lang = [
-      { shortform: "es", longform: "Español" },
-      { shortform: "en", longform: "English" }
+      { shortform: "es", longform: "Español", flag: "ES" },
+      { shortform: "en", longform: "English", flag: "EN" }
     ];
     global.lang = lang;
   }
@@ -67,7 +67,7 @@ class LanguageView extends Template {
                   key={key}
                   onPress={() => this.setText(item.shortform)}
                 >
-                  
+                  <Flag id={item.flag} />
                 </Button>
               </Left>
               <Body>
