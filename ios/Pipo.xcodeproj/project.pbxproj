@@ -82,6 +82,8 @@
 		6C554B72264F4864AF8C2559 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 810829E5C49D431698787E94 /* Ubuntu-R.ttf */; };
 		A55A29D39A0A4C73BA9DC18C /* Ubuntu-RI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59140C6EE2164A7B9C388EC9 /* Ubuntu-RI.ttf */; };
 		A901563F486449D88AF46C29 /* libReactNativeLocalization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8A9D7ABB5E412CB532BEB3 /* libReactNativeLocalization.a */; };
+		F501B3A0A9BC4CD5AB83EC12 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A47D9B0FFA74D05B1468731 /* libRNSVG.a */; };
+		F811002200FE43A388FD238B /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6F5E532A634CEF896C8C12 /* libRNSVG-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -449,6 +451,9 @@
 		59140C6EE2164A7B9C388EC9 /* Ubuntu-RI.ttf */ = {isa = PBXFileReference; name = "Ubuntu-RI.ttf"; path = "../assets/fonts/Ubuntu-RI.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B60959D38E6845D39C6B02C1 /* ReactNativeLocalization.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeLocalization.xcodeproj"; path = "../node_modules/react-native-localization/ios/ReactNativeLocalization.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		AD8A9D7ABB5E412CB532BEB3 /* libReactNativeLocalization.a */ = {isa = PBXFileReference; name = "libReactNativeLocalization.a"; path = "libReactNativeLocalization.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9A699931789B43C98DEDEA55 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; name = "RNSVG.xcodeproj"; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		7A47D9B0FFA74D05B1468731 /* libRNSVG.a */ = {isa = PBXFileReference; name = "libRNSVG.a"; path = "libRNSVG.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9A6F5E532A634CEF896C8C12 /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; name = "libRNSVG-tvOS.a"; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,6 +484,7 @@
 				A25CCCBB21E544FC9452DE1A /* libRNVectorIcons.a in Frameworks */,
 				6BA2B2AF195248AEBB5EF9A4 /* libRNSound.a in Frameworks */,
 				A901563F486449D88AF46C29 /* libReactNativeLocalization.a in Frameworks */,
+				F501B3A0A9BC4CD5AB83EC12 /* libRNSVG.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +500,7 @@
 				2D02E4C61E0B4AEC006451C7 /* libRCTSettings-tvOS.a in Frameworks */,
 				2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */,
 				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
+				F811002200FE43A388FD238B /* libRNSVG-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +724,7 @@
 				85A72EEEBFDE46E38125B477 /* RNVectorIcons.xcodeproj */,
 				0F5DDD3ED6DC42DC97E3F722 /* RNSound.xcodeproj */,
 				B60959D38E6845D39C6B02C1 /* ReactNativeLocalization.xcodeproj */,
+				9A699931789B43C98DEDEA55 /* RNSVG.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1433,12 +1441,15 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)\..\node_modules\react-native-localization\ios",
+					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 				);
 				INFOPLIST_FILE = PipoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1464,12 +1475,15 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)\..\node_modules\react-native-localization\ios",
+					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 				);
 				INFOPLIST_FILE = PipoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1496,6 +1510,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)\..\node_modules\react-native-localization\ios",
+					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 				);
 				INFOPLIST_FILE = Pipo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1521,6 +1536,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)\..\node_modules\react-native-localization\ios",
+					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 				);
 				INFOPLIST_FILE = Pipo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1552,11 +1568,14 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)\..\node_modules\react-native-localization\ios",
+					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 				);
 				INFOPLIST_FILE = "Pipo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1590,11 +1609,14 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)\..\node_modules\react-native-localization\ios",
+					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 				);
 				INFOPLIST_FILE = "Pipo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1627,11 +1649,14 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)\..\node_modules\react-native-localization\ios",
+					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 				);
 				INFOPLIST_FILE = "Pipo-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1664,11 +1689,14 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-soundRNSound",
 					"$(SRCROOT)\..\node_modules\react-native-localization\ios",
+					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 				);
 				INFOPLIST_FILE = "Pipo-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

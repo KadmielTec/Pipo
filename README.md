@@ -4,6 +4,7 @@ Para instalar el repositorio:
 <ol>
   <li>Clonar el repositorio</li>
   <li>Ejecutar el comando <code>npm i && react-native link</code> sobre la carpeta del proyecto en la consola</li>
+  <li>Ejecutar el comando <code>react-native link react-native-svg sobre la carpeta del proyecto en la consola para el tema de las banderas</code></li>
   <li><code>react-native run-android</code> o <code>react-native run-ios</code></li>
 </ol>
 

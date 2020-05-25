@@ -28,7 +28,7 @@ class LanguageView extends Template {
     super(props);
     const lang = [
       { shortform: "es", longform: "Español", flag: "ES" },
-      { shortform: "en", longform: "English", flag: "EN" }
+      { shortform: "en", longform: "English", flag: "US" }
     ];
     global.lang = lang;
   }
@@ -66,15 +66,16 @@ class LanguageView extends Template {
                   style={{ backgroundColor: "#007AFF" }}
                   key={key}
                   onPress={() => this.setText(item.shortform)}
+                  
                 >
-                  <Flag id={item.flag} />
+                <Flag id={item.flag} width={50} height={50} />
                 </Button>
+                
               </Left>
               <Body>
                 <Text>{item.longform}</Text>
               </Body>
               <Right>
-                <Icon name="arrow-forward" />
               </Right>
             </ListItem>
           ))}
