@@ -102,7 +102,7 @@ class LoginView extends Template {
                   block
                   light
                   title={stringsOfLanguages.play}
-                  onPress={this.controller.play()}
+                  onPress={this.controller.play}
                 >
                   <Text>{stringsOfLanguages.play}</Text>
                 </Button>

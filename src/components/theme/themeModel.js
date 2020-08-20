@@ -11,7 +11,7 @@ var languageSelected;
 class ThemeModel {
   constructor(_view) {
     view = _view;
-    console.log("theme view: " + view);
+    console.log("theme view model: " + view);
     self = this;
     languageSelected = view.get_params();
 
@@ -106,7 +106,7 @@ class ThemeModel {
 
   themeSelected(theme,language) {
     console.log(language);
-    console.log(theme);
+    console.log(theme.theme);
     view.redirect("gameMode", { theme: theme.theme, themeName: theme.title , themeLanguage: language });
   }
 }

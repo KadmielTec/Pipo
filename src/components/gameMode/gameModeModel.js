@@ -11,7 +11,7 @@ class GameModeModel {
     view = _view;
     let self = this;
     params = view;
-    console.log("gm model: "+ params.get_params());
+    console.log("gm model view: "+ params.get_params().theme);
     let ds = [
       {
         title: "Clásico",

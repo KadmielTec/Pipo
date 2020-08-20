@@ -11,8 +11,8 @@ class GameModeController {
   constructor(_view,_model) {
     view = _view;
     model = _model;
-    selectedLanguage= view.get_params();
-    console.log("ctrl gm language: " + selectedLanguage.themeLanguage);
+    selectedLanguage= view.get_params().theme;
+    console.log("ctrl gm language: " + selectedLanguage);
   }
 
   learn(){

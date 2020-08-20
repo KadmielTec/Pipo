@@ -11,6 +11,7 @@ class LoginController {
     view = _view;
     model = _model;
     language = view.get_params();
+    console.log("login controller:"+ language);
   }
 
   login() {

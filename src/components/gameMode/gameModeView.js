@@ -17,6 +17,7 @@ class GameModeView extends Template {
     this.model = new GameModeModel(this);
     this.controller = new GameModeController(this, this.model);
     this.languageSelected = this.get_params().themeLanguage;
+    console.log("gm view:"+ this.get_params().theme);
     console.log("gm view:"+ this.languageSelected);
   }
 

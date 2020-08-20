@@ -12,7 +12,7 @@ import {
   Content,
   ListItem,
   Icon,
-  Switch
+  Switch,
 } from "native-base";
 import stringsOfLanguages from "../../commons/texts";
 import Template from "../../commons/template";
@@ -21,14 +21,14 @@ import { Flag } from "react-native-svg-flagkit";
 
 class LanguageView extends Template {
   static navigationOptions = {
-    header: null
+    header: null,
   };
 
   constructor(props) {
     super(props);
     const lang = [
       { shortform: "es", longform: "Español", flag: "ES" },
-      { shortform: "en", longform: "English", flag: "US" }
+      { shortform: "en", longform: "English", flag: "US" },
     ];
     global.lang = lang;
   }
@@ -51,7 +51,6 @@ class LanguageView extends Template {
             style={{
               alignItems: "flex-end",
               justifyContent: "center",
-              marginRight: 20
             }}
           >
             <Icons name={"pipo"} style={{ color: "white" }} size={40} />
@@ -66,17 +65,14 @@ class LanguageView extends Template {
                   style={{ backgroundColor: "#007AFF" }}
                   key={key}
                   onPress={() => this.setText(item.shortform)}
-                  
                 >
-                <Flag id={item.flag} width={50} height={50} />
+                  <Flag id={item.flag} width={50} height={50} />
                 </Button>
-                
               </Left>
               <Body>
                 <Text>{item.longform}</Text>
               </Body>
-              <Right>
-              </Right>
+              <Right></Right>
             </ListItem>
           ))}
         </Content>
