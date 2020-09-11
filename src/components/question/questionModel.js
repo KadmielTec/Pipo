@@ -14,6 +14,7 @@ class QuestionModel {
     view = _view;
     self = this;
     let params = view.get_params();
+    console.log("question model: "+params);
 
     //  CÓDIGOS DE LOS TEMAS:
     // Matematicas: 0
@@ -115,6 +116,7 @@ class QuestionModel {
     let index = (view.state.currentIndex < qlength - 1) ? view.state.currentIndex + 1 : -1;
     if(index > -1) view.setState({active: true, currentQuestion: view.state.themeQuestions[index].pregunta, currentAnswers: view.state.themeAnswers[index], currentIndex: index, lifesVisible: true});
     else self.calcPoints();
+
   }
 
   async decrementLifes(){

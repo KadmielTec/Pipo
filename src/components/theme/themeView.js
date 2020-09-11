@@ -13,7 +13,7 @@ import ThemeController from './themeController';
 import ThemeModel from './themeModel';
 import Template from '../../commons/template';
 import ThemeRow from './itemRenders/themeRow';
-
+import stringsOfLanguages from '../../commons/texts';
 class ThemeView extends Template {
 
   static navigationOptions = {
@@ -24,6 +24,8 @@ class ThemeView extends Template {
     super(props);
     this.model = new ThemeModel(this);
     this.controller = new ThemeController(this,this.model);
+    this.languageTheme= this.get_params();
+    console.log("theme view: "+this.get_params());
   }
 
   render(){
@@ -31,7 +33,7 @@ class ThemeView extends Template {
       <View style={{flex: 1}}>
         <Header
           leftComponent={{ icon: 'arrow-back', color: '#fff', onPress: () => this.pop() }}
-          centerComponent={{ text: 'TEMAS', style: { color: '#fff' } }}
+          centerComponent={{ text: stringsOfLanguages.theme, style: { color: '#fff' } }}
           backgroundColor={'#FF7B08'}
         />
         <ScrollView>
@@ -40,10 +42,11 @@ class ThemeView extends Template {
               data={this.state.dataSource}
               keyExtractor={(item, index) => index}
               renderItem={(item) => {
+                console.log(item);
                 return(
                   <ThemeRow
                     title = {item.item.title}
-                    onPress = {() => this.controller.themeSelected(item.item)}
+                    onPress = {() => this.controller.themeSelected(item.item,this.languageTheme)}
                     blank = {item.item.blank}
                     icon = {item.item.icon}
                     color ={item.item.color}

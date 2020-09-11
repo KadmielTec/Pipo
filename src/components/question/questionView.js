@@ -7,12 +7,6 @@ import Template from '../../commons/template';
 import QuestionController from './questionController';
 import QuestionModel from './questionModel';
 
-
-
-
-
-
-
 class QuestionView extends Template {
 
   static navigationOptions = {
@@ -23,6 +17,7 @@ class QuestionView extends Template {
     super(props);
     this.model = new QuestionModel(this);
     this.controller = new QuestionController(this,this.model);
+    console.log("question view: "+ this);
   }
 
   render(){

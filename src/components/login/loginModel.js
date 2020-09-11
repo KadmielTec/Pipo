@@ -22,10 +22,22 @@ class LoginModel {
     }
   }
 
-  login(){
-    let username = storage.get_username();
-    let password = storage.get_password();
-    if(view.state.username != username || view.state.password != password){
+  loginApi(){
+    fetch('https://backendpipo.herokuapp.com/login', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      "usuario": view.state.username,
+      "contrasena": view.state.password
+    }),
+  })
+  .then(response => response.json())
+  .then(responseJson =>{
+    console.log(responseJson.profileData);
+    if(view.state.username!=responseJson.profileData.usuario){
       Toast.show({
         text: "Usuario o contraseña incorrecto",
         duration: 4000,
@@ -35,9 +47,21 @@ class LoginModel {
       });
       return;
     }
-    storage.store_data({logged: true});
+     Toast.show({
+        text: "Bienvenido: " + responseJson.profileData.nombre,
+        duration: 3000,
+        position: "center",
+        type: 'success',
+        textStyle: { textAlign: "center" }
+      });
     view.replace('home');
     inicio.play();
+  }
+  )
+  .catch((error) => {
+    console.error(error);
+  });
+  
   }
 
   register(){

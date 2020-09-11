@@ -20,7 +20,7 @@ import {
   Form,
   Button
 } from "native-base";
-import { msg_login } from '../../commons/texts';
+import stringsOfLanguages from '../../commons/texts';
 import LoginController from './loginController';
 import LoginModel from './loginModel';
 import Template from '../../commons/template';
@@ -54,12 +54,12 @@ class LoginView extends Template {
 					</Body>
 				</Header>
 
-        <Content style={{backgroundColor: '#EBEBEB'}}>
+        <Content style={{backgroundColor: '#fcfbfa'}}>
           {login &&
             <View>
               <Form>
                 <Item floatingLabel>
-                  <Label>{"Usuario"}</Label>
+                  <Label>{stringsOfLanguages.username}</Label>
                   <Input
                     getRef={input => {this.user = input}}
                     onChangeText={(text)=>{this.setState({username: text})}}
@@ -72,7 +72,7 @@ class LoginView extends Template {
                 </Item>
 
                 <Item floatingLabel>
-                  <Label>{"Contraseña"}</Label>
+                  <Label>{stringsOfLanguages.password}</Label>
                   <Input
                     getRef={input => {this.pass = input}}
                     onChangeText={(text)=>{this.setState({password: text})}}
@@ -90,25 +90,36 @@ class LoginView extends Template {
                 <Button
                   block
                   light
-                  title={msg_login.login}
+                  title={stringsOfLanguages.login}
                   onPress={this.controller.login}
                 >
-                  <Text>Iniciar sesión</Text>
+                  <Text>{stringsOfLanguages.login}</Text>
+                </Button>
+              </View>
+
+              <View style={{padding: 10}}>
+                <Button
+                  block
+                  light
+                  title={stringsOfLanguages.play}
+                  onPress={this.controller.play}
+                >
+                  <Text>{stringsOfLanguages.play}</Text>
                 </Button>
               </View>
 
               <TouchableWithoutFeedback onPress={() => this.controller.changeForm()} style={{padding: 10}}>
                 <View style={{ alignItems: 'center'}}>
-                  <Text>Registrarse</Text>
+                  <Text>{stringsOfLanguages.register}</Text>
                 </View>
               </TouchableWithoutFeedback>
-            </View>
+          </View>
           }
           {!login &&
             <View>
               <Form>
                 <Item floatingLabel>
-                  <Label>{"Usuario"}</Label>
+                  <Label>{stringsOfLanguages.username}</Label>
                   <Input
                     getRef={input => {this.user = input}}
                     onChangeText={(text)=>{this.setState({username: text})}}
@@ -121,7 +132,7 @@ class LoginView extends Template {
                 </Item>
 
                 <Item floatingLabel>
-                  <Label>{"Contraseña"}</Label>
+                  <Label>{stringsOfLanguages.password}</Label>
                   <Input
                     getRef={input => {this.regPass = input}}
                     onChangeText={(text)=>{this.setState({password: text})}}
@@ -135,7 +146,7 @@ class LoginView extends Template {
                 </Item>
 
                 <Item floatingLabel >
-                  <Label>{"Confirmar contraseña"}</Label>
+                  <Label>{stringsOfLanguages.repeatPassword}</Label>
                   <Input
                     getRef={input => {this.regPass2 = input}}
                     onChangeText={(text)=>{this.setState({password2: text})}}
@@ -153,15 +164,15 @@ class LoginView extends Template {
                 <Button
                   block
                   light
-                  title={msg_login.register}
+                  title={stringsOfLanguages.register}
                   onPress={this.controller.register}
                 >
-                  <Text>Registrar</Text>
+                  <Text>{stringsOfLanguages.register}</Text>
                 </Button>
               </View>
               <TouchableWithoutFeedback onPress={() => this.controller.changeForm()} style={{padding: 10}}>
                 <View style={{alignItems: 'center'}}>
-                  <Text>Volver</Text>
+                  <Text>{stringsOfLanguages.back}</Text>
                 </View>
               </TouchableWithoutFeedback>
             </View>
@@ -171,7 +182,7 @@ class LoginView extends Template {
         <Footer style={{ backgroundColor: "white" }}>
 					<View style={{ alignItems: "center", opacity: 0.5, flexDirection: "row" }}>
 						<View padder style={{alignItems: "center", flexDirection: "row"}}>
-							<Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{'Hecho con'}</Text><Icon name={'heart'} size={20} /><Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{'en Kadmiel'}</Text>
+							<Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{stringsOfLanguages.str_made_with_love_1}</Text><Icon name={'heart'} size={20} /><Text style={{ color: "#000", fontFamily: 'Ubuntu' }}>{stringsOfLanguages.str_made_with_love_2}</Text>
 						</View>
 					</View>
 				</Footer>

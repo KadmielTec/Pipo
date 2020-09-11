@@ -9,6 +9,7 @@ import HomeView from './home/homeView';
 import ThemeView from './theme/themeView';
 import GameModeView from './gameMode/gameModeView';
 import QuestionView from './question/questionView';
+import LanguageView from './Languages/languageView'
 import aboutUs from './aboutUs';
 
 // Recordatorio para Jose: Crear un SwitchNavigator entre Login y Home, Home volverlo un StackNavigator.
@@ -16,6 +17,9 @@ import aboutUs from './aboutUs';
 let Navigator = createStackNavigator({
   loading: {
     screen: LoadingView,
+  },
+  language: {
+    screen: LanguageView
   },
   login: {
     screen: LoginView,
@@ -35,9 +39,10 @@ let Navigator = createStackNavigator({
   question: {
     screen: QuestionView,
   }
+
 },
 {
-  initialRouteName: 'loading'
+  initialRouteName: 'language'
 });
 
 module.exports = { Navigator };
